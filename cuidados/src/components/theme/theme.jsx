@@ -1,18 +1,23 @@
 import { createTheme } from '@mui/material/styles';
+import ArvoRegular from '../../pages/assets/fonts/Arvo-Regular.ttf';
 
-const theme = createTheme({
+export const myTheme = createTheme({
     palette: {
         primary: {
-            main: '#00838f'
+            main: '#ef9a9a'
         },
         secondary:{
-            main: '#80cbc4'
+            main: '#f48fb1'
+        },
+        logo:{
+            main:'#ffffff'
         },
         contrastThreshold: 3,
         tonalOffset: 0.2,
     },
     typography: {
         fontFamily:[ 
+            '"ArvoRegular"',
             '-apple-system',
             'BlinkMacSystemFont',
             '"Segoe UI"',
@@ -31,11 +36,22 @@ const theme = createTheme({
     },
     components: {
         MuiCssBaseline: {
+            styleOverrides: `
+                @font-face {
+                font-family: 'ArvoRegular';
+                font-style: normal;
+                src: url('${ArvoRegular}') format('truetype');
+                }
+                    `,
         },
     },
 });
 
-export default theme
+export const myDarkTheme = createTheme({
+    patette: {
+        mode: 'dark'
+    }
+});
 
 
 
