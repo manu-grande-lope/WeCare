@@ -36,7 +36,7 @@ export default function RegisterForm() {
         <Paper elevation= "4"
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 5, width: '30ch'},
+                '& .MuiTextField-root': { m: 4, pr:0, width: '30ch'},
             }}
             noValidate
             autoComplete="off"
@@ -60,7 +60,7 @@ export default function RegisterForm() {
                 </TextField>
             </div>
             <BasicDateRangePicker/>
-            <Button variant="contained" color="primary" sx={{width:"200px", marginLeft:"45px", marginTop:"40px"}}>BUSCA</Button>
+            <Button variant="contained" color="primary" sx={{width:"250px", marginLeft:"50px", marginTop:"20px", marginBottom:"20px"}}>BUSCA</Button>
             
         </Paper>
     );

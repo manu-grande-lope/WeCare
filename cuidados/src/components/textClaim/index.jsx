@@ -6,7 +6,7 @@ export default function TextClaim(){
 
 
     return(
-        <Box p="20px" color="white"  sx={{ fontFamily:'"Arvo-Regular"'}}>
+        <Box p="20px" color="white" >
             <Typography color="logo" fontSize="30px" fontWeight="900">
                 <p>WE CARE FOR YOU, WE CARE FOR THEM</p>
             </Typography>

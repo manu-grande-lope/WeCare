@@ -1,12 +1,12 @@
-import * as React from 'react';
-import {Button, CssBaseline, Grid} from '@mui/material';
+import {CssBaseline, Grid} from '@mui/material';
 import {ThemeProvider} from '@mui/material/styles';
 import {myTheme} from './components/theme/theme.jsx';
 import './App.css';
 import Header from './components/header/index.jsx';
-import RegisterForm from './components/formRegistro/index.jsx';
+import RegisterForm from './components/formServicios/index.jsx';
 import Hands from './pages/assets/hands.jpg'; // Import using relative path
 import TextClaim from './components/textClaim/index.jsx';
+import Carousel from './components/carousel/index.jsx';
 
 const styles = {
   gridContainer: {
@@ -29,6 +29,7 @@ function App() {
           <Grid item container sx={12} mt="20px" justifyContent="space-around" mb="50px"  flexDirection="row" flexWrap="wrap">
           <RegisterForm/>
           </Grid>
+          <Carousel/>
         </Grid>
     </ThemeProvider>
   );

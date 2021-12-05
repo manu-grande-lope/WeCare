@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import ArvoRegular from '../../pages/assets/fonts/Arvo-Regular.ttf';
+import ArvoBold from '../../pages/assets/fonts/Arvo-Bold.ttf';
 
 export const myTheme = createTheme({
     palette: {
@@ -18,6 +19,7 @@ export const myTheme = createTheme({
     typography: {
         fontFamily:[ 
             '"ArvoRegular"',
+            '"ArvoBold"',
             '-apple-system',
             'BlinkMacSystemFont',
             '"Segoe UI"',
@@ -42,6 +44,11 @@ export const myTheme = createTheme({
                 font-style: normal;
                 src: url('${ArvoRegular}') format('truetype');
                 }
+                @font-face {
+                    font-family: 'ArvoBold';
+                    font-style: normal;
+                    src: url('${ArvoBold}') format('truetype');
+                    }
                     `,
         },
     },
