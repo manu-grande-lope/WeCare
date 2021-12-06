@@ -24,7 +24,7 @@ const services = [
     }
 ];
 
-export default function RegisterForm() {
+export default function ServicesForm() {
     const [service, setService] = React.useState('Elige un servicio');
 
     const handleChange = (event) => {

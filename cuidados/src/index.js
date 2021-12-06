@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {I18nextProvider} from "react-i18next";
-import i18next from "i18next";
+import {CssBaseline} from '@mui/material';
+import {ThemeProvider} from '@mui/material/styles';
+import {myTheme} from './components/theme/theme.jsx';
 import './index.css';
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 
-i18next.init({
-  interpolation: { escapeValue: false },  // React already does escaping
-});
 
 ReactDOM.render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18next}>
+    <ThemeProvider theme={myTheme}>
+      <CssBaseline/>
     <App />
-    </I18nextProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

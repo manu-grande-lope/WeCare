@@ -13,10 +13,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Products', 'Pricing', 'About Us'];
+const settings = ['Profile', 'Account', 'Logout', 'Delete Account'];
 
 const ResponsiveAppBar = () => {
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,9 +36,9 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
     return (
-        <AppBar position="static" color="transparent" elevation="none">
+        <AppBar position="static" color="transparent" elevation="0">
             <Container maxWidth="xl" >
-                <Toolbar disableGutters backgroundColor="none">
+                <Toolbar disableGutters>
                     <Typography
                         variant="h6"
                         noWrap
@@ -101,7 +102,6 @@ const ResponsiveAppBar = () => {
                             </Button>
                         ))}
                     </Box>
-
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
