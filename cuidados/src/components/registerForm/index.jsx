@@ -13,13 +13,15 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
+import { useTranslation } from "react-i18next";
+
 
 export default function RegisterForm() {
     const [values, setValues] = React.useState({
         password: '',
         showPassword: false,
     });
-
+    const [i, i18n] = useTranslation("global");
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
@@ -38,21 +40,21 @@ export default function RegisterForm() {
     return (
         <Box marginLeft="20px" marginTop="20px">
             <FormControl sx={{ m: 2, width: '30ch' }} >
-            <TextField id="outlined-basic" label="Nombre" variant="outlined"  />
+            <TextField id="outlined-basic" label={i ("menu-registro.name")} variant="outlined"  />
             </FormControl>
             <FormControl sx={{ m: 2, width: '30ch' }} >
-            <TextField id="outlined-basic" label="E-mail" variant="outlined"  />
+            <TextField id="outlined-email" label="E-mail" variant="outlined"  />
             </FormControl>
             <FormControl component="fieldset" sx={{ m: 2}} >
-                <FormLabel component="legend">¿Qué cuidados ofreces?</FormLabel>
+                <FormLabel component="legend">{i ("menu-registro.care")}</FormLabel>
                 <RadioGroup
                     aria-label="cuidados"
                     defaultValue="mascotas"
                     name="radio-buttons-group"
                 >
-                    <FormControlLabel value="mascota" control={<Radio />} label="Mascotas" />
-                    <FormControlLabel value="ancianos" control={<Radio />} label="Ancianos" />
-                    <FormControlLabel value="niños" control={<Radio />} label="Niños" />
+                    <FormControlLabel value="mascota" control={<Radio />} label={i ("menu-registro.pets")} />
+                    <FormControlLabel value="ancianos" control={<Radio />} label={i ("menu-registro.elderly")} />
+                    <FormControlLabel value="niños" control={<Radio />} label={i ("menu-registro.children")} />
                 </RadioGroup>
             </FormControl>
             <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
@@ -76,7 +78,7 @@ export default function RegisterForm() {
                     }
                     label="Password"
                 />
-                <Button variant="contained" sx={{mt:"20px"}}>ENVIAR</Button>
+                <Button variant="contained" sx={{mt:"20px"}}>{i ("menu-registro.send-button")}</Button>
             </FormControl>
         </Box>
     );

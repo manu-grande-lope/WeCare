@@ -6,6 +6,8 @@ import Landing from './pages/landing/index.jsx';
 import Header from './components/header/index.jsx'
 import TextClaim from './components/textClaim/index.jsx';
 import Footer from './components/footer';
+
+
 const styles = {
   gridContainer: {
     backgroundImage: `url(${Hands})`,

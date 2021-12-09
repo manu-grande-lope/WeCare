@@ -12,11 +12,14 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+// import { useTranslation } from "react-i18next";
+
 
 const pages = ['Products', 'Pricing', 'About Us'];
 const settings = ['Profile', 'Account', 'Logout', 'Delete Account'];
 
 const ResponsiveAppBar = () => {
+    // const [i, i18n] = useTranslation("global");
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -43,9 +46,10 @@ const ResponsiveAppBar = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
-                        <VolunteerActivismIcon color="logo" />
+                        color="white"
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' }  }}
+                    >WE CARE
+                        <VolunteerActivismIcon color="logo" sx={{ml:"15px"}}/>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                         <IconButton
@@ -89,7 +93,7 @@ const ResponsiveAppBar = () => {
                         component="div"
                         color="white"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                    ><VolunteerActivismIcon color="logo" sx={{ mr: "20px" }} />
+                    >
                         WE CARE
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

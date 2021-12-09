@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
-import { Button, Grid } from '@mui/material';
+import { Button} from '@mui/material';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import BasicDateRangePicker from './date';
 import PetsIcon from '@mui/icons-material/Pets';
 import ElderlyIcon from '@mui/icons-material/Elderly';
 import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
+import { useTranslation } from "react-i18next";
 
 
 const services = [
@@ -25,6 +26,7 @@ const services = [
 ];
 
 export default function ServicesForm() {
+    const [i, i18n] = useTranslation("global");
     const [service, setService] = React.useState('Elige un servicio');
 
     const handleChange = (event) => {
@@ -47,7 +49,7 @@ export default function ServicesForm() {
                 <TextField
                     id="outlined-select-currency"
                     select
-                    label="Elige un servicio"
+                    label={i ("select-service.choose")}
                     value={service}
                     onChange={handleChange}
                     helperText=''

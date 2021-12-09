@@ -1,0 +1,28 @@
+{
+    "footer":{
+        "Hello-world": "Hello-world"
+    },
+    "claim":{
+        "claim-phrase": "We care for you, we care for them.",
+        "catch-phrase": "Caretakers for every necessity."
+    },
+    "menu":{
+        "products":"Products",
+        "pricing":"Prices",
+        "about-us":"About us"
+    },
+    "select-service":{
+        "choose":"Select a service",
+        "date-start":"Start",
+        "date-finish":"Finish",
+        "to":"to"
+    },
+    "menu-registro":{
+        "name":"Name",
+        "care":"What care do you offer?",
+        "pets":"Pets",
+        "elderly":"Elderly",
+        "children":"Children",
+        "send-button":"Send"
+    }
+}

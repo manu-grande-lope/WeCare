@@ -1,0 +1,30 @@
+{
+    "footer":{
+        "Hello-world": "Hola-Mundo"
+    },
+    "claim":{
+        "claim-phrase": "Nos preocupamos por ti, y por ellos.",
+        "catch-phrase": "Cuidadores para todo tipo de necesidad."
+    },
+    "menu":{
+        "products":"Productos",
+        "pricing":"Precios",
+        "about-us":"Sobre Nosotros"
+    },
+    "select-service":{
+        "choose":"Elige un servicio",
+        "date-start":"Principio",
+        "date-finish":"Final",
+        "to":"a"
+    },
+
+    "menu-registro":{
+        "name":"Nombre",
+        "care":"¿Qué cuidados ofreces?",
+        "pets":"Mascotas",
+        "elderly":"Ancianos",
+        "children":"Niños",
+        "send-button":"Enviar"
+    }
+    
+}
