@@ -38,7 +38,7 @@ export default function Login() {
     return (
         <Box marginLeft="20px" marginTop="20px">
             <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
-            <TextField id="outlined-basic" label={i ("menu-registro.name")} variant="outlined" />
+            <TextField id="outlined-basic" label={i ("menu-login.name")} variant="outlined" />
             </FormControl>
             <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>

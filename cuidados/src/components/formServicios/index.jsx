@@ -12,16 +12,19 @@ import { useTranslation } from "react-i18next";
 
 const services = [
     {
-        value: 'PETS',
-        label: <PetsIcon/>,
+        value: 'pets',
+        label: 'menu-registro.pets',
+        icon: <PetsIcon/>
     },
     {
-        value: 'ELDERLY',
-        label: <ElderlyIcon/>,
+        value: 'menu-registro.elderly',
+        label: 'menu-registro.elderly',
+        icon: <ElderlyIcon/>
     },
     {
-        value: 'CHILDREN',
-        label: <ChildFriendlyIcon/>,
+        value: 'menu-registro.children',
+        label: 'menu-registro.children',
+        icon: <ChildFriendlyIcon/>
     }
 ];
 
@@ -56,7 +59,7 @@ export default function ServicesForm() {
                 >
                     {services.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
-                            {option.label}
+                            {option.icon}{i(option.label)}
                         </MenuItem>
                     ))}
                 </TextField>

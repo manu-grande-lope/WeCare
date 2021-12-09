@@ -25,6 +25,15 @@
         "elderly":"Ancianos",
         "children":"Niños",
         "send-button":"Enviar"
+    },
+    "menu-settings":{
+        "login":"Login",
+        "register":"Registro",
+        "account":"Mi Cuenta",
+        "logout":"Logout"
+    },
+    "menu-login":{
+        "name":"Nombre de usuario"
     }
     
 }

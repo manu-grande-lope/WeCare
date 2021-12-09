@@ -16,12 +16,12 @@ import { useTranslation } from "react-i18next";
 import TranslateSwitch from "./switch/index.jsx"
 
 
-const pages = ['Products', 'Pricing', 'About Us'];
-const settings = ['Profile', 'Account', 'Logout', 'Delete Account'];
+const pages = ['menu.products', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
+const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
 
 const ResponsiveAppBar = () => {
     const [i, i18n] = useTranslation("global");
-
+    console.log(i(pages[0]))
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -86,7 +86,7 @@ const ResponsiveAppBar = () => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography textAlign="center"> {i(page)}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -106,7 +106,8 @@ const ResponsiveAppBar = () => {
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}>
-                                {page}
+                                {console.log(page)}
+                                {i(page)}
                             </Button>
                         ))}
                     </Box>
@@ -134,7 +135,7 @@ const ResponsiveAppBar = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center">{i(setting)}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

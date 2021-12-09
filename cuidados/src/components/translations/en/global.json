@@ -24,5 +24,14 @@
         "elderly":"Elderly",
         "children":"Children",
         "send-button":"Send"
+    },
+    "menu-settings":{
+        "login":"Loging",
+        "register":"Register",
+        "account":"My Account",
+        "logout":"Logout"
+    },
+    "menu-login":{
+        "name":"Username"
     }
 }

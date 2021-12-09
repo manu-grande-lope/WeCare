@@ -22,7 +22,7 @@ export default function RegisterForm() {
         showPassword: false,
     });
     const [i, i18n] = useTranslation("global");
-    
+
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
@@ -41,13 +41,13 @@ export default function RegisterForm() {
     return (
         <Box marginLeft="20px" marginTop="20px">
             <FormControl sx={{ m: 2, width: '30ch' }} >
-            <TextField id="outlined-basic" label={i ("menu-registro.name")} variant="outlined"  />
+            <TextField id="outlined-basic" label={i("menu-registro.name")} variant="outlined"  />
             </FormControl>
             <FormControl sx={{ m: 2, width: '30ch' }} >
             <TextField id="outlined-email" label="E-mail" variant="outlined"  />
             </FormControl>
             <FormControl component="fieldset" sx={{ m: 2}} >
-                <FormLabel component="legend">{i ("menu-registro.care")}</FormLabel>
+                <FormLabel component="legend">{i("menu-registro.care")}</FormLabel>
                 <RadioGroup
                     aria-label="cuidados"
                     defaultValue="mascotas"

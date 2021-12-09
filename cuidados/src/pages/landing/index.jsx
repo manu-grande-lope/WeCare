@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import ServicesForm from '../../components/formServicios/index.jsx';
-import Carousel from '../../components/carousel/index.jsx';
 import RegisterForm from '../../components/registerForm/index.jsx';
 import Login from '../../components/Login/index.jsx';
 
@@ -15,7 +14,6 @@ function Landing() {
                 <Login/>
             </Grid>
             <Grid item>
-                <Carousel />
             </Grid>
         </Grid>
     );
