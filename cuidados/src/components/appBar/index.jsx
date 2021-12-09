@@ -12,14 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import TranslateSwitch from "./switch/index.jsx"
 
 
 const pages = ['Products', 'Pricing', 'About Us'];
 const settings = ['Profile', 'Account', 'Logout', 'Delete Account'];
 
 const ResponsiveAppBar = () => {
-    // const [i, i18n] = useTranslation("global");
+    const [i, i18n] = useTranslation("global");
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -41,6 +42,9 @@ const ResponsiveAppBar = () => {
     return (
         <AppBar position="static" color="transparent" elevation="0">
             <Container maxWidth="xl" >
+            <button onClick={()=> i18n.changeLanguage("es")}>ES</button>
+            <button onClick={()=> i18n.changeLanguage("en")}>EN</button>
+            <TranslateSwitch/>
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"
@@ -141,3 +145,4 @@ const ResponsiveAppBar = () => {
     );
 };
 export default ResponsiveAppBar;
+
