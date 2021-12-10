@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
-import TranslateSwitch from "./switch/index.jsx"
+import TranslateSwitch from "../footer/switch/index.jsx"
 
 
 const pages = ['menu.products', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
@@ -42,9 +42,6 @@ const ResponsiveAppBar = () => {
     return (
         <AppBar position="static" color="transparent" elevation="0">
             <Container maxWidth="xl" >
-            <button onClick={()=> i18n.changeLanguage("es")}>ES</button>
-            <button onClick={()=> i18n.changeLanguage("en")}>EN</button>
-            <TranslateSwitch/>
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"

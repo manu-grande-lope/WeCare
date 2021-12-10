@@ -7,7 +7,7 @@ export default function TextClaim() {
     const [i, i18n] = useTranslation("global");
 
     return (
-        <Box p="20px" color="white" >
+        <Box ml="20px" p="20px" color="white" >
             <Typography color="logo" fontSize="30px" fontWeight="900" variant="h1" >
             {i ("claim.claim-phrase")}
             </Typography>

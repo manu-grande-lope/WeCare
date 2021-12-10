@@ -1,0 +1,10 @@
+.carousel__style{
+    align-self: center;
+    width: 60%;
+    height: 50%;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.31); 
+    box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.31);
+    border-radius: 2%;
+
+}

@@ -1,9 +1,14 @@
+import { Grid } from "@mui/material";
 import ResponsiveAppBar from "../appBar"
+import TextClaim from '../textClaim/index.jsx';
 
-export default function Header(){
+export default function Header() {
 
 
     return (
-        <ResponsiveAppBar/>
+        <Grid container justifyContent="space-between">
+                <ResponsiveAppBar/>
+                <TextClaim/>
+        </Grid>
     )
 }
