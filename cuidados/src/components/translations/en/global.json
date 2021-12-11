@@ -20,6 +20,9 @@
     "menu-registro":{
         "name":"Name",
         "care":"What care do you offer?",
+        "user-question":"Do you take care or we take care of you?",
+        "caretaker":"Caretaker",
+        "user":"User",
         "pets":"Pets",
         "elderly":"Elderly",
         "children":"Children",

@@ -47,6 +47,17 @@ export default function RegisterForm() {
             <TextField id="outlined-email" label="E-mail" variant="outlined"  />
             </FormControl>
             <FormControl component="fieldset" sx={{ m: 2}} >
+                <FormLabel component="legend">{i("menu-registro.user-question")}</FormLabel>
+                <RadioGroup
+                    aria-label="userType"
+                    defaultValue="mascotas"
+                    name="radio-buttons-group"
+                >
+                    <FormControlLabel value="caretaker" control={<Radio />} label={i ("menu-registro.caretaker")} />
+                    <FormControlLabel value="user" control={<Radio />} label={i ("menu-registro.user")} />
+                </RadioGroup>
+            </FormControl>
+            <FormControl component="fieldset" sx={{ m: 2}} >
                 <FormLabel component="legend">{i("menu-registro.care")}</FormLabel>
                 <RadioGroup
                     aria-label="cuidados"
@@ -78,6 +89,28 @@ export default function RegisterForm() {
                         </InputAdornment>
                     }
                     label="Password"
+                />
+            </FormControl>
+            <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
+                <InputLabel htmlFor="outlined-adornment-password">Repeat Password</InputLabel>
+                <OutlinedInput
+                    id="outlined-adornment-password"
+                    type={values.showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    onChange={handleChange('password')}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge="end"
+                            >
+                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                    label="Repeat Password"
                 />
                 <Button variant="contained" sx={{mt:"20px"}}>{i ("menu-registro.send-button")}</Button>
             </FormControl>

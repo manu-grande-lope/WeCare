@@ -21,6 +21,9 @@
     "menu-registro":{
         "name":"Nombre",
         "care":"¿Qué cuidados ofreces?",
+        "user-question":"¿Cuidas o te cuidamos?",
+        "caretaker":"Cuidador",
+        "user":"Usuario",
         "pets":"Mascotas",
         "elderly":"Ancianos",
         "children":"Niños",

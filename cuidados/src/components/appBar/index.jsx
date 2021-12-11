@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +14,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
-import TranslateSwitch from "../footer/switch/index.jsx"
 
 
 const pages = ['menu.products', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
@@ -133,6 +133,7 @@ const ResponsiveAppBar = () => {
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">{i(setting)}</Typography>
+                                    <Link to="/landing">Pa la landing</Link>
                                 </MenuItem>
                             ))}
                         </Menu>
