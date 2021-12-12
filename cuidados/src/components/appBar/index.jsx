@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 
 const pages = ['menu.products', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
+const pathSettings = ['/login', '/register', '/account', '/logout']; 
 
 const ResponsiveAppBar = () => {
     const [i, i18n] = useTranslation("global");
@@ -128,12 +129,12 @@ const ResponsiveAppBar = () => {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{i(setting)}</Typography>
-                                    <Link to="/landing">Pa la landing</Link>
+                            onClose={handleCloseUserMenu}>
+                            {settings.map((setting, indx) => (
+                                <MenuItem  onClick={handleCloseNavMenu}>
+                                    <Typography>
+                                    <Link to={pathSettings[indx]}>{i(setting)}</Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

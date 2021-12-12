@@ -5,7 +5,7 @@ import CuidadorPerro from '../../pages/assets/cuidadorperro1.jpg';
 import './style.css'
 
 export default function Example(props)
-// hacer fetch 
+// hacer fetch  users/getusers
 {
     let items = [
         {
