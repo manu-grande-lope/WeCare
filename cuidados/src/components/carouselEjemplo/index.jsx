@@ -4,8 +4,8 @@ import { Paper, Button, Card, CardMedia } from '@mui/material'
 import CuidadorPerro from '../../pages/assets/cuidadorperro1.jpg';
 import './style.css'
 
-export default function Example(props)
-// hacer fetch  users/getusers
+export default function CarouselCaretakers(props)
+// hacer fetch  http://localhost:3001/user/getallusers
 {
     let items = [
         {

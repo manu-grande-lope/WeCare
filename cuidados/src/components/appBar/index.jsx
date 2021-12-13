@@ -16,7 +16,8 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
 
 
-const pages = ['menu.products', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
+const pages = ['menu.services', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
+const pathPages = ['/services', '/pricing', '/login', '/register', '/aboutUs']
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
 const pathSettings = ['/login', '/register', '/account', '/logout']; 
 
@@ -50,7 +51,7 @@ const ResponsiveAppBar = () => {
                         component="div"
                         color="white"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' }  }}
-                    >WE CARE
+                    ><Link to="/" className='link__color'>WE CARE</Link>
                         <VolunteerActivismIcon color="logo" sx={{ml:"15px"}}/>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
@@ -82,9 +83,11 @@ const ResponsiveAppBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
+                            {pages.map((page, indx) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center"> {i(page)}</Typography>
+                                    <Typography textAlign="center">
+                                        <Link to={pathPages[indx]} className='link__color'>{i(page)}</Link>
+                                        </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -94,18 +97,16 @@ const ResponsiveAppBar = () => {
                         noWrap
                         component="div"
                         color="white"
-                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                    >
-                        WE CARE
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <Link to="/">WE CARE</Link>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {pages.map((page, indx) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}>
-                                {console.log(page)}
-                                {i(page)}
+                                    <Link to={pathPages[indx]} className='link__color'>{i(page)}</Link>
                             </Button>
                         ))}
                     </Box>
@@ -132,9 +133,7 @@ const ResponsiveAppBar = () => {
                             onClose={handleCloseUserMenu}>
                             {settings.map((setting, indx) => (
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <Typography>
-                                    <Link to={pathSettings[indx]}>{i(setting)}</Link>
-                                    </Typography>
+                                    <Link to={pathSettings[indx]} >{i(setting)}</Link>
                                 </MenuItem>
                             ))}
                         </Menu>
