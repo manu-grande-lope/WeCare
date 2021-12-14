@@ -20,6 +20,7 @@
 
     "menu-registro":{
         "name":"Nombre",
+        "description":"Sobre ti",
         "care":"¿Qué cuidados ofreces?",
         "user-question":"¿Cuidas o te cuidamos?",
         "caretaker":"Cuidador",
@@ -37,6 +38,12 @@
     },
     "menu-login":{
         "name":"Nombre de usuario"
-    }
+    },
+    "caretaker":{
+        "modify":"Modificar mi cuenta",
+        "messages":"Mis mensajes",
+        "alert":"¡ESCUCHA!",
+        "delete":"BORRAR CUENTA",
+        "text-alert":"En WECARE no compartimos tus datos con terceros, esta información es tuya y solo tuya, no te preocupes por tus transacciones con otros usuarios, nosotros somos sólo mediadores, gracias por confiar en nuestra plataforma."}
     
 }

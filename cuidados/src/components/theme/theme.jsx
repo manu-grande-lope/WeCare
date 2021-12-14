@@ -13,6 +13,10 @@ export const myTheme = createTheme({
         logo:{
             main:'#ffffff'
         },
+        alert:{
+            main:'#fbc02d',
+            delete:'#d84315'
+        },
         contrastThreshold: 3,
         tonalOffset: 0.2,
     },

@@ -34,16 +34,41 @@ export default function Login() {
         event.preventDefault();
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if(event.target.checkValidity()){
+            const options = {
+                method: 'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify({
+                    name: event.target.name.value,
+                    password: event.target.pass.value
+                })
+            }
+            //llamo al login
+            fetch('http://localhost:3001/auth/login', options)
+            .then(r => r.json())
+            .then(d => console.log(d))
+        }else{
+            console.log('error fatal, todo mal, shiiiiiiit')
+        }
+    };
+
 
     return (
-        <Box marginLeft="20px" marginTop="20px">
+        
+        <Box marginLeft="25px" marginTop="20px">
+            <form onSubmit={handleSubmit}>
             <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
-            <TextField id="outlined-basic" label={i ("menu-login.name")} variant="outlined" />
+            <TextField id="outlined-basic" name= 'name'label={i ("menu-login.name")} variant="outlined" />
             </FormControl>
             <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"
+                    name="pass"
                     type={values.showPassword ? 'text' : 'password'}
                     value={values.password}
                     onChange={handleChange('password')}
@@ -61,8 +86,10 @@ export default function Login() {
                     }
                     label="Password"
                 />
-                <Button variant="contained" sx={{ mt: "20px" }}>{i("menu-registro.send-button")}</Button>
             </FormControl>
+            <Button type="submit" variant="contained" sx={{ m: 6, width: '30ch' }}>{i("menu-registro.send-button")}</Button>
+            </form>
         </Box>
+        
     )
 }

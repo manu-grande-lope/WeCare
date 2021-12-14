@@ -13,6 +13,7 @@ import Pricing from './pages/pricing';
 import About from './pages/about';
 import PrivatePolicy from './pages/PrivatePolicy';
 import Terms from './pages/terms';
+import CaretakerProfile from './pages/caretakerProfile';
 
 
 const styles = {
@@ -55,7 +56,9 @@ function App() {
           </Route>
           {/* RUTAS PUBLICAS  */}
           {/* RUTAS PRIVADAS  */}
-          {/* METER PERFIL DE USUARIO  */}
+          <Route path="/account">
+              <CaretakerProfile/>
+          </Route>
           <Route path="/"> {/* debera tener una parte privada de usuario loggeado*/}
               <Landing/>
           </Route>

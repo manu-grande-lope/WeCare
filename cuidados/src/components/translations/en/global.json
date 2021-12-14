@@ -19,6 +19,7 @@
     },
     "menu-registro":{
         "name":"Name",
+        "description":"About you",
         "care":"What care do you offer?",
         "user-question":"Do you take care or we take care of you?",
         "caretaker":"Caretaker",
@@ -36,5 +37,12 @@
     },
     "menu-login":{
         "name":"Username"
+    },
+    "caretaker":{
+        "modify":"Modify my profile",
+        "messages":"My messages",
+        "alert":"LISTEN!",
+        "delete":"DELETE ACCOUNT",
+        "text-alert":"In WECARE we do not share your data with third parties, this information is yours and only yours, do not worry about your transactions with other users, we are only mediators, thank you for trusting our platform."
     }
 }

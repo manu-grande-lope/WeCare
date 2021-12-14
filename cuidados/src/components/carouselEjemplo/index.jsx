@@ -9,12 +9,14 @@ export default function CarouselCaretakers(props)
 {
     let items = [
         {
-            name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!"
+            name: "Manu Grande",
+            description: "Cuidador de perros profesional desde hace 5 años, etólogo diplomado Y GUAPO.",
+            image:'../../pages/assets/cuidadorperro1.jpg'
         },
         {
-            name: "Random Name #2",
-            description: "Hello World!"
+            name: "Rocío Perez",
+            description: "Cuidadora de ancianos y enfermos, enfermera.",
+            image:'../../pages/assets/cuidadorperro1.jpg'
         }
     ]
 
@@ -27,7 +29,7 @@ export default function CarouselCaretakers(props)
             // <Item item={item}></Item>
         <Carousel className="carousel__style">
             {
-                items.map( (item, i) => <Item key={i} item={item} /> )
+                items.map( (item, i) => <Item className="carousel__style--wrapper" key={i} item={item} /> )
             }
         </Carousel>
     )
@@ -36,18 +38,22 @@ export default function CarouselCaretakers(props)
 function Item(props)
 {
     return (
-        <Card elevation="0" sx={{ display: 'flex'}}>
+        <div className='card__style'>
             <CardMedia
                     component="img"
-                    height="150"
-                    image={CuidadorPerro}
-                    alt="Cuidador perrro"/>
+                    height='200px'
+                    width='200px'
+                    image={props.item.image}
+                    alt="Cuidador perro"/>
+            <div className='card__style--text'>
             <h4>{props.item.name}</h4>
             <p>{props.item.description}</p>
+            
 
             <Button className="CheckButton">
-                Check it out!
+                Contacta
             </Button>
-        </Card>
+            </div>
+        </div>
     )
 }
