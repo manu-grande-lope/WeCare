@@ -50,7 +50,7 @@ export default function Login() {
             //llamo al login
             fetch('http://localhost:3001/auth/login', options)
             .then(r => r.json())
-            .then(d => console.log(d))
+            .then(d => sessionStorage.setItem('token', d.access_token))
         }else{
             console.log('error fatal, todo mal, shiiiiiiit')
         }

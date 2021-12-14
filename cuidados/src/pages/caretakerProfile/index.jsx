@@ -4,8 +4,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import { useTranslation } from "react-i18next";
-import AvatarIMG from "/Users/ManuGrande/Desktop/BOOTCAMP/PROYECTO FINAL/proyecto-final-front/cuidados/src/pages/assets/burritouser.jpg";
-import splatter from "/Users/ManuGrande/Desktop/BOOTCAMP/PROYECTO FINAL/proyecto-final-front/cuidados/src/pages/assets/backservices.jpg"
+import AvatarIMG from "../assets/burritouser.jpg";
 
 function ImageAvatars() {
     return (
@@ -18,15 +17,26 @@ function ImageAvatars() {
     );
 }
 
+
 export default function CaretakerProfile() {
     const [i, i18n] = useTranslation("global");
-
-
-    const styles = {
-        gridContainer: {
-            backgroundImage: `url(${splatter})`,
-            backgroundRepeat: 'repeat'
-        }
+    const handleDeleteUser = (event) => {
+        event.preventDefault();
+        const token = sessionStorage.getItem('token');
+            const options = {
+                method: 'DELETE',
+                headers:{
+                    'authorization':`Bearer ${token}`,
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify({
+                    email:'doraja4086@mykcloud.com'
+                })
+            }
+            //llamo al login
+            fetch('http://localhost:3001/auth/login', options)
+            .then(r => r.json())
+            .then(d => console.log(d))
     };
 
     return (
@@ -69,7 +79,7 @@ export default function CaretakerProfile() {
                     variant='outlined'
                     size='medium'
                     sx={{ color: 'alert.delete' }}
-                    startIcon={<DeleteIcon />}>{i("caretaker.delete")}</Button>
+                    startIcon={<DeleteIcon />} onClick={handleDeleteUser}>{i("caretaker.delete")}</Button>
             </Stack>
         </form>
     );

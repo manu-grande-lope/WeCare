@@ -16,8 +16,8 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
 
 
-const pages = ['menu.services', 'menu.pricing', 'menu-settings.login', 'menu-settings.register', 'menu.about-us'];
-const pathPages = ['/services', '/pricing', '/login', '/register', '/aboutUs']
+const pages = ['menu.services', 'menu.pricing', 'menu.about-us'];
+const pathPages = ['/services', '/pricing', '/aboutUs']
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
 const pathSettings = ['/login', '/register', '/account', '/logout']; 
 
