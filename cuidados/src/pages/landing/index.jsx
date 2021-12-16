@@ -10,8 +10,9 @@ function Landing() {
     <Grid xs={12} container justifyContent="center" >
       <Grid item container sx={12} mt="20px" justifyContent="space-around" flexDirection="row" flexWrap="wrap">
         <ServicesForm />
+        {/* <Banner/> */}
         <CarouselCaretakers />
-          <Banner/>
+          
         </Grid>
     </Grid>
   );

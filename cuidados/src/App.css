@@ -3,7 +3,17 @@
 
 }
 
-.linkMenu__style{
-   text-decoration:none;
+:link{
+   text-decoration: none;
+
+}
+
+a{
+   color: white;
+}
+
+
+.collapsed__link__style{
+   color: grey;
 }
 

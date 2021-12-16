@@ -42,7 +42,7 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
     return (
-        <AppBar position="static" color="transparent" elevation="0">
+        <AppBar position="static" color="transparent" elevation={0}>
             <Container maxWidth="xl" >
                 <Toolbar disableGutters>
                     <Typography
@@ -51,7 +51,7 @@ const ResponsiveAppBar = () => {
                         component="div"
                         color="white"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' }  }}
-                    ><Link to="/" className='link__color'>WE CARE</Link>
+                    ><Link to="/">WE CARE</Link>
                         <VolunteerActivismIcon color="logo" sx={{ml:"15px"}}/>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
@@ -86,7 +86,7 @@ const ResponsiveAppBar = () => {
                             {pages.map((page, indx) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link className="linkMenu__style" to={pathPages[indx]} className='link__color'>{i(page)}</Link>
+                                        <Link className='collapsed__link__style'to={pathPages[indx]} >{i(page)}</Link>
                                         </Typography>
                                 </MenuItem>
                             ))}
@@ -106,7 +106,7 @@ const ResponsiveAppBar = () => {
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}>
-                                    <Link to={pathPages[indx]} className='link__color'>{i(page)}</Link>
+                                    <Link  to={pathPages[indx]} >{i(page)}</Link>
                             </Button>
                         ))}
                     </Box>
@@ -133,7 +133,7 @@ const ResponsiveAppBar = () => {
                             onClose={handleCloseUserMenu}>
                             {settings.map((setting, indx) => (
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <Link to={pathSettings[indx]} >{i(setting)}</Link>
+                                    <Link className='collapsed__link__style' to={pathSettings[indx]} >{i(setting)}</Link>
                                 </MenuItem>
                             ))}
                         </Menu>

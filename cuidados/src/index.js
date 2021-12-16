@@ -11,7 +11,6 @@ import i18next from "i18next";
 import global_es from "./components/translations/es/global.json";
 import global_en from "./components/translations/en/global.json";
 
-
 i18next.init({
   interpolation: {escapeValue: false},
   lng:"es",
@@ -37,6 +36,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

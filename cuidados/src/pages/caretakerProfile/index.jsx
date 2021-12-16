@@ -30,7 +30,7 @@ export default function CaretakerProfile() {
                     'content-type':'application/json'
                 },
                 body: JSON.stringify({
-                    email:'doraja4086@mykcloud.com'
+                    email:'hobele2442@ningame.com'
                 })
             }
             //llamo al login
@@ -56,7 +56,7 @@ export default function CaretakerProfile() {
                 </Typography>
                 <TextField id="outlined-basic" name="name" label={i("menu-registro.name")} variant="outlined" value='nombre por props que se pueda modificar' />
                 <TextField id="outlined-basic" name="email" label="Email" variant="outlined" value='email por props modificable' />
-                <TextField id="outlined-basic" multiline="true" minRows="5" name="descripcion" label={i("menu-registro.description")} variant="outlined" />
+                <TextField id="outlined-basic" multiline={true} minRows="5" name="descripcion" label={i("menu-registro.description")} variant="outlined" />
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.modify")}</Button>
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.messages")}</Button>
 

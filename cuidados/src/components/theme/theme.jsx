@@ -7,21 +7,21 @@ export const myTheme = createTheme({
         primary: {
             main: '#ef9a9a'
         },
-        secondary:{
+        secondary: {
             main: '#f48fb1'
         },
-        logo:{
-            main:'#ffffff'
+        logo: {
+            main: '#ffffff'
         },
-        alert:{
-            main:'#fbc02d',
-            delete:'#d84315'
+        alert: {
+            main: '#fbc02d',
+            delete: '#d84315'
         },
         contrastThreshold: 3,
         tonalOffset: 0.2,
     },
     typography: {
-        fontFamily:[ 
+        fontFamily: [
             '"ArvoRegular"',
             '"ArvoBold"',
             '-apple-system',
@@ -37,7 +37,7 @@ export const myTheme = createTheme({
         ].join(',')
     },
     spacing: (factor) => {
-        
+
         return `${0.25 * factor}rem`
     },
     components: {
@@ -59,9 +59,15 @@ export const myTheme = createTheme({
 });
 
 export const myDarkTheme = createTheme({
-    patette: {
-        mode: 'dark'
-    }
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#ef9fff',
+        },
+        secondary: {
+            main: '#ff45ff',
+        },
+    },
 });
 
 

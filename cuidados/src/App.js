@@ -1,6 +1,6 @@
-import React from 'react';
+import {React} from 'react';
 import { BrowserRouter, Switch, Route,} from 'react-router-dom';
-import { Grid, Stack  } from '@mui/material';
+import { Grid, Stack} from '@mui/material';
 import './App.css';
 import Hands from './pages/assets/hands.jpg'; // Import using relative path
 import Landing from './pages/landing/index.jsx';
@@ -14,7 +14,8 @@ import About from './pages/about';
 import PrivatePolicy from './pages/PrivatePolicy';
 import Terms from './pages/terms';
 import CaretakerProfile from './pages/caretakerProfile';
-
+import ThemeProvider from './components/theme/theme-provider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const styles = {
   gridContainer: {
@@ -24,7 +25,9 @@ const styles = {
 };
 
 function App() {
+
   return (
+    <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
         <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px" }} xs={12}>
@@ -56,9 +59,9 @@ function App() {
           </Route>
           {/* RUTAS PUBLICAS  */}
           {/* RUTAS PRIVADAS  */}
-          <Route path="/account">
+          <PrivateRoute path="/account">
               <CaretakerProfile/>
-          </Route>
+          </PrivateRoute>
           <Route path="/"> {/* debera tener una parte privada de usuario loggeado*/}
               <Landing/>
           </Route>
@@ -68,6 +71,7 @@ function App() {
         <Footer/>
       </Stack>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
