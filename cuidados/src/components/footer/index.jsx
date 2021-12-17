@@ -28,7 +28,7 @@ export default function Footer() {
                         ENG</Button>
                 </Stack>
                 {/* <ThemeSwitch/> */}
-                <button id="theme" className="buttonTheme__style"><img src={ThemePNG} className="buttonTheme__style--img" /></button>
+                <button id="theme" className="buttonTheme__style"><img alt="theming button" src={ThemePNG} className="buttonTheme__style--img" /></button>
             </Stack>
             <Stack gap={2}>
                 <Link to="/privatepolicy">Politica de privacidad</Link>

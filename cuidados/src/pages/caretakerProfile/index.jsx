@@ -4,7 +4,9 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 import AvatarIMG from "../assets/burritouser.jpg";
+import { useHistory } from "react-router-dom";
 
 function ImageAvatars() {
     return (
@@ -19,24 +21,48 @@ function ImageAvatars() {
 
 
 export default function CaretakerProfile() {
-    const [i, i18n] = useTranslation("global");
+    let history = useHistory();
+    const [i] = useTranslation("global");
     const handleDeleteUser = (event) => {
+        console.log('ejecuta funcion')
         event.preventDefault();
         const token = sessionStorage.getItem('token');
-            const options = {
-                method: 'DELETE',
-                headers:{
-                    'authorization':`Bearer ${token}`,
-                    'content-type':'application/json'
-                },
-                body: JSON.stringify({
-                    email:'hobele2442@ningame.com'
-                })
-            }
-            //llamo al login
-            fetch('http://localhost:3001/auth/login', options)
-            .then(r => r.json())
-            .then(d => console.log(d))
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                token: token
+            })
+        }
+        //llamo al login
+        fetch('http://localhost:3001/user/account', options)
+            .then(r => {
+                console.log('primer then', r.status)
+                if (r.status === 200){
+                    sessionStorage.removeItem('token')
+                    history.push('/register')
+                }else if (r.status === 400){
+                    alert('Ha ocurrido un error, sorry')
+                }
+            })
+
+        // const FetchCaretaker = () => {
+        //     const [caretakerData, setCaretakaerData] = useState([]);
+        //     useEffect(() => {
+        //         fetch('http://localhost:3001/user/getallusers')
+        //             .then(r => r.json())
+        //             .then(d => setCaretakaerData(d))
+        //         let userProfile = caretakerData.map((item, i) =>
+        //     }, []);
+
+
+        // }
+
+
+
     };
 
     return (

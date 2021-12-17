@@ -56,22 +56,11 @@ export default function Login() {
                     sessionStorage.setItem('token', d.access_token)
                     history.push("/account")
                 })
-
         } else {
             console.log('error fatal, todo mal, shiiiiiiit')
         }
-        // <Redirect
-        //                 to={{
-        //                     pathname: "/account"
-        //                     /*state: { from: location }*/
-        //                 }}
-        //             />
-
     };
-
-
     return (
-
         <Box marginLeft="25px" marginTop="20px">
             <form onSubmit={handleSubmit}>
                 <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
@@ -103,6 +92,5 @@ export default function Login() {
                 <Button type="submit" variant="contained" sx={{ m: 6, width: '30ch' }}>{i("menu-registro.send-button")}</Button>
             </form>
         </Box>
-
     )
 }

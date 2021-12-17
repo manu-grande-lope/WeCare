@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 const pages = ['menu.services', 'menu.pricing', 'menu.about-us'];
 const pathPages = ['/services', '/pricing', '/aboutUs']
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
-const pathSettings = ['/login', '/register', '/account', '/logout']; 
+const pathSettings = ['/login', '/register', '/account', '/logout'];
 
 const ResponsiveAppBar = () => {
     const [i, i18n] = useTranslation("global");
@@ -39,8 +39,15 @@ const ResponsiveAppBar = () => {
     };
 
     const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
+        setAnchorElUser(null); 
     };
+
+
+    const handleLogout = (i) =>{
+        if (i === 3){
+            sessionStorage.removeItem('token');
+        }
+    } 
     return (
         <AppBar position="static" color="transparent" elevation={0}>
             <Container maxWidth="xl" >
@@ -50,11 +57,11 @@ const ResponsiveAppBar = () => {
                         noWrap
                         component="div"
                         color="white"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' }  }}
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     ><Link to="/">WE CARE</Link>
-                        <VolunteerActivismIcon color="logo" sx={{ml:"15px"}}/>
+                        <VolunteerActivismIcon color="logo" sx={{ ml: "15px" }} />
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -86,8 +93,8 @@ const ResponsiveAppBar = () => {
                             {pages.map((page, indx) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link className='collapsed__link__style'to={pathPages[indx]} >{i(page)}</Link>
-                                        </Typography>
+                                        <Link className='collapsed__link__style' to={pathPages[indx]} >{i(page)}</Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -106,7 +113,7 @@ const ResponsiveAppBar = () => {
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}>
-                                    <Link  to={pathPages[indx]} >{i(page)}</Link>
+                                <Link to={pathPages[indx]} >{i(page)}</Link>
                             </Button>
                         ))}
                     </Box>
@@ -132,8 +139,13 @@ const ResponsiveAppBar = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}>
                             {settings.map((setting, indx) => (
-                                <MenuItem  onClick={handleCloseNavMenu}>
-                                    <Link className='collapsed__link__style' to={pathSettings[indx]} >{i(setting)}</Link>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Button to={pathSettings[indx]}
+                                        variant="text"
+                                        onClick={()=>handleLogout(indx)}
+                                        // onClick={pathSettings[indx]}
+                                        >
+                                        <Link className='collapsed__link__style' to={pathSettings[indx]} >{i(setting)}</Link></Button>
                                 </MenuItem>
                             ))}
                         </Menu>

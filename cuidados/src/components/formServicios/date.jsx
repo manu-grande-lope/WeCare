@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 export default function BasicDateRangePicker() {
     const [value, setValue] = React.useState([null, null]);
-    const [i, i18n] = useTranslation("global");
+    const [i] = useTranslation("global");
 
     return (
         <LocalizationProvider dateAdapter={DateFnsAdapter}>

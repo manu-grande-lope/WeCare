@@ -1,20 +1,70 @@
 import { Grid, Paper, Stack, Typography } from "@mui/material";
+import { width } from "@mui/system";
+import Splatter from '../../pages/assets/backservices.jpg';
+
+
+
+const styles = {
+    gridContainer: {
+      backgroundImage: `url(${Splatter})`,
+      backgroundRepeat: 'repeat'
+
+    }
+  };
 
 
 export default function Banner() {
     return(
 
-        <Grid justifyContent="flex-start" display='flex' flexDirection="row" xs={3}  flexWrap='wrap'>
-                    <Stack direction="column" justifyContent='flex-start' spacing={2} flexWrap='wrap' elevation="4">
-                        <Typography variant="h5">Nuestros servicios</Typography>
-                        <Typography variant="body2">En WeCARE unimos gente que necesita un tipo de cuidado específicos con profesionales que los ofrecen, en unas tarifas pactadas por usuario y cuidador y en las que nosotros sólo fijamos un máximo y un mínimo.
-                            Somos un portal de contacto, que busca dar un servicio de calidad, eficaz y que genere relaciones profesionales y humanas positivas.</Typography>
-                    </Stack>
-                    <Stack direction="column" justifyContent='flex-start' spacing={2} flexWrap='wrap'>
-                        <Typography variant="h5">Nuestros servicios</Typography>
-                        <Typography variant="body2">En WeCARE unimos gente que necesita un tipo de cuidado específicos con profesionales que los ofrecen, en unas tarifas pactadas por usuario y cuidador y en las que nosotros sólo fijamos un máximo y un mínimo.
-                            Somos un portal de contacto, que busca dar un servicio de calidad, eficaz y que genere relaciones profesionales y humanas positivas.</Typography>
-                    </Stack>
+        <Grid  display='flex' flexDirection="row" xs={12} p={6} flexWrap="wrap" style={styles.gridContainer} border={1} borderColor={'primary.main'}>
+            <Grid item container justifyContent="center" p={6} >
+                    <Paper sx={{padding:"20px"}} elevation={6}  >
+                        <Typography variant="h5">Cuidado de mascotas</Typography>
+                        <Typography variant="body2">En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                        <Typography variant="body1">
+                            ¿Te vas de vacaciones? Nuestros cuidadores se pueden quedar tu mascota, o ir a tu casa a cuidar de ella.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Tienes un animal enfermo que necesita cuidados? Cuenta con nosotros, nos desplazamos.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Necesitas paseos o cuidado eventual? Háblalo con el cuidador, tenemos una solución. 
+                        </Typography>
+                        </Typography>
+                    </Paper>
+                </Grid>
+                <Grid item container justifyContent="center"p={6} >
+                    <Paper sx={{padding:"20px"}}  elevation={6} >
+                        <Typography variant="h5">Cuidado de mascotas</Typography>
+                        <Typography variant="body2">En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                        <Typography variant="body1">
+                            ¿Te vas de vacaciones? Nuestros cuidadores se pueden quedar tu mascota, o ir a tu casa a cuidar de ella.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Tienes un animal enfermo que necesita cuidados? Cuenta con nosotros, nos desplazamos.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Necesitas paseos o cuidado eventual? Háblalo con el cuidador, tenemos una solución. 
+                        </Typography>
+                        </Typography>
+                    </Paper>
+                </Grid>
+                <Grid item container justifyContent="center" p={6} >
+                    <Paper sx={{padding:"20px"}} elevation={6} >
+                        <Typography variant="h5">Cuidado de mascotas</Typography>
+                        <Typography variant="body2">En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                        <Typography variant="body1">
+                            ¿Te vas de vacaciones? Nuestros cuidadores se pueden quedar tu mascota, o ir a tu casa a cuidar de ella.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Tienes un animal enfermo que necesita cuidados? Cuenta con nosotros, nos desplazamos.
+                        </Typography>
+                        <Typography variant="body1">
+                            ¿Necesitas paseos o cuidado eventual? Háblalo con el cuidador, tenemos una solución. 
+                        </Typography>
+                        </Typography>
+                    </Paper>
+                </Grid>
         </Grid >
     )
 }
