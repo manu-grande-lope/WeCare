@@ -1,4 +1,4 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import { BrowserRouter, Switch, Route,} from 'react-router-dom';
 import { Grid, Stack} from '@mui/material';
 import './App.css';
@@ -31,7 +31,7 @@ function App() {
     <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
-    <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px" }} xs={12}>
+    <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
           <Header />
           </Grid>
           <main className='main__style'>
@@ -48,7 +48,7 @@ function App() {
           </Route>
           <Route path="/login">
             <Grid item container justifyContent="center">
-              <Login/>
+              <Login />
             </Grid>
           </Route>
           <Route path="/privatepolicy">
@@ -63,7 +63,7 @@ function App() {
           {/* RUTAS PUBLICAS  */}
           {/* RUTAS PRIVADAS  */}
           <PrivateRoute path="/account">
-              <CaretakerProfile/>
+              <CaretakerProfile />
           </PrivateRoute>
           <Route path="/"> {/* debera tener una parte privada de usuario loggeado*/}
               <Landing/>

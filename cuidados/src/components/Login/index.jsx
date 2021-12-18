@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import { useTranslation } from "react-i18next";
-import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -17,7 +16,7 @@ import TextClaimLogin from '../textClaim2';
 export default function Login() {
     let history = useHistory();
 
-    const [i, i18n] = useTranslation("global");
+    const [i] = useTranslation("global");
 
     const [values, setValues] = React.useState({
         password: '',
@@ -54,10 +53,8 @@ export default function Login() {
             //llamo al login
             fetch('http://localhost:3001/auth/login', options)
                 .then(r => r.json())
-                .then(d => {
-                    sessionStorage.setItem('token', d.access_token)
-                    history.push("/account")
-                })
+                .then(d => sessionStorage.setItem('token', d.access_token))
+            history.push("/account")
         } else {
             console.log('error fatal, todo mal, shiiiiiiit')
         }
@@ -65,39 +62,39 @@ export default function Login() {
     return (
         <Grid>
             <Grid item container xs={12} lg={4}>
-        <Stack marginLeft="0px" marginTop="20px" component="form" onSubmit={handleSubmit} back sx={{backgroundColor:'white', borderRadius:"5px"}}>
-                <FormControl sx={{ m: 2, width: '30ch'}} variant="outlined" color="secondary">
-                    <TextField id="outlined-basic" name='name' label={i("menu-login.name")} variant="outlined" />
-                </FormControl>
-                <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
-                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                    <OutlinedInput
-                        id="outlined-adornment-password"
-                        name="pass"
-                        type={values.showPassword ? 'text' : 'password'}
-                        value={values.password}
-                        onChange={handleChange('password')}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={handleClickShowPassword}
-                                    onMouseDown={handleMouseDownPassword}
-                                    edge="end"
-                                >
-                                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                </IconButton>
-                            </InputAdornment>
-                        }
-                        label="Password"
-                    />
-                </FormControl>
-                <Button type="submit" variant="contained" sx={{ m: 6, width: '30ch' }}>{i("menu-registro.send-button")}</Button>
-        </Stack>
-        </Grid>
-        <Grid item container  xs={12} lg={12} >
-            <TextClaimLogin/>
-        </Grid>
+                <Stack marginLeft="0px" marginTop="20px" component="form" onSubmit={handleSubmit} back sx={{ backgroundColor: 'white', borderRadius: "5px" }}>
+                    <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
+                        <TextField id="outlined-basic" name='name' label={i("menu-login.name")} variant="outlined" />
+                    </FormControl>
+                    <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
+                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                        <OutlinedInput
+                            id="outlined-adornment-password"
+                            name="pass"
+                            type={values.showPassword ? 'text' : 'password'}
+                            value={values.password}
+                            onChange={handleChange('password')}
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={handleClickShowPassword}
+                                        onMouseDown={handleMouseDownPassword}
+                                        edge="end"
+                                    >
+                                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                    </IconButton>
+                                </InputAdornment>
+                            }
+                            label="Password"
+                        />
+                    </FormControl>
+                    <Button type="submit" variant="contained" sx={{ m: 6, width: '30ch' }}>{i("menu-registro.send-button")}</Button>
+                </Stack>
+            </Grid>
+            <Grid item container xs={12} lg={12} >
+                <TextClaimLogin />
+            </Grid>
         </Grid>
     )
 }

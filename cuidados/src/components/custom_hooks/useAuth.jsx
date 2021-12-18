@@ -1,7 +1,3 @@
-function useAuth() {
-
-    return sessionStorage.getItem('token') ? true : false;
-
-}
-
-export default useAuth;
+export default function useAuth() {
+    return sessionStorage.getItem('token');
+};

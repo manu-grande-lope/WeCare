@@ -1,9 +1,5 @@
-import * as React from 'react';
-import { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import { Stack } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { React, useState } from 'react';
+import { Stack, Modal, TextField, Box, IconButton } from '@mui/material';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -20,6 +16,7 @@ import { useHistory } from "react-router-dom";
 
 
 export default function RegisterForm() {
+
     const [values, setValues] = React.useState({
         password: '',
         showPassword: false,
@@ -45,7 +42,7 @@ export default function RegisterForm() {
 
     const handleSubmit = (event) => {
 
-        
+
         event.preventDefault();
         let options = {};
         if (event.target.password.value === event.target.repeatpassword.value) {
@@ -60,13 +57,13 @@ export default function RegisterForm() {
                         name: event.target.name.value,
                         email: event.target.email.value, // obtengo el value de un input por su name
                         pass: event.target.password.value,
-                        usertype:event.target.userType.value
+                        usertype: event.target.userType.value
                     }),
                 };
-    
+
                 console.log(event.target.userType.value)
             } else {
-                
+
                 options = {
                     method: "POST",
                     headers: {
@@ -77,10 +74,11 @@ export default function RegisterForm() {
                         name: event.target.name.value,
                         email: event.target.email.value, // obtengo el value de un input por su name
                         pass: event.target.password.value,
-                        cuida:event.target.caretakerOptions.value,
-                        usertype:event.target.userType.value
+                        cuida: event.target.caretakerOptions.value,
+                        usertype: event.target.userType.value
                     }),
                 };
+
                 console.log(event.target.userType.value)
             }
             // llamo al registro
@@ -90,7 +88,7 @@ export default function RegisterForm() {
         } else {
             alert('El usuario ya existe')
         }
-        
+
     };
 
     const handleUserChange = (event) => {

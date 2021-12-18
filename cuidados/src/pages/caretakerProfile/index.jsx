@@ -1,4 +1,5 @@
 import { Card, Typography, TextField, Stack, Avatar } from "@mui/material";
+import {React, useState, useEffect} from "react";
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -22,10 +23,25 @@ function ImageAvatars() {
 export default function CaretakerProfile() {
     let history = useHistory();
     const [i] = useTranslation("global");
+    
+    const [userInfo, setUserInfo] = useState(0);
+
+    useEffect(() => {
+        const token = sessionStorage.getItem('token');
+        const options = {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'content-type': 'application/json'
+            },
+        }
+        fetch('http://localhost:3001/user/', options)
+            .then(r => r.json())
+            .then(d => setUserInfo(d))
+    }, []);
 
 
     const handleDeleteUser = (event) => {
-        console.log('ejecuta funcion')
         event.preventDefault();
         const token = sessionStorage.getItem('token');
         const options = {
@@ -34,13 +50,7 @@ export default function CaretakerProfile() {
                 'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({
-                token: token
-            })
         }
-
-
-        //llamo al login
         fetch('http://localhost:3001/user/account', options)
             .then(r => {
                 console.log('primer then', r.status)
@@ -51,21 +61,6 @@ export default function CaretakerProfile() {
                     alert('Ha ocurrido un error, sorry')
                 }
             })
-
-        // const FetchCaretaker = () => {
-        //     const [caretakerData, setCaretakaerData] = useState([]);
-        //     useEffect(() => {
-        //         fetch('http://localhost:3001/user/getallusers')
-        //             .then(r => r.json())
-        //             .then(d => setCaretakaerData(d))
-        //         let userProfile = caretakerData.map((item, i) =>
-        //     }, []);
-
-
-        // }
-
-
-
     };
 
     return (
@@ -75,16 +70,18 @@ export default function CaretakerProfile() {
                 autoComplete='off'
                 justifyContent='center'
                 margin={3}
-                spacing={3}>
+                spacing={3}
+                >
                 <ImageAvatars />
                 <Typography gutterBottom variant="h5" component="div">
-                    Nombre de cuidador por props
+                    Hola {userInfo.name}, bienvenido.
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                 </Typography>
-                <TextField id="outlined-basic" name="name" label={i("menu-registro.name")} variant="outlined"/>
-                <TextField id="outlined-basic" name="email" label="Email" variant="outlined" />
-                <TextField id="outlined-basic" multiline={true} minRows="5" name="descripcion" label={i("menu-registro.description")} variant="outlined" />
+                <TextField id="outlined-basic" name="name" label={i("menu-registro.name")} variant="outlined" value=""/>
+                <TextField id="outlined-basic" name="email" label="Email" variant="outlined" value="" />
+                <TextField id="outlined-basic" multiline={true} minRows="5" name="descripcion" label={i("menu-registro.description")} variant="outlined" value="" />
+
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.modify")}</Button>
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.messages")}</Button>
 
