@@ -1,5 +1,4 @@
 import { Typography} from "@mui/material";
-import { Box} from "@mui/system";
 import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 

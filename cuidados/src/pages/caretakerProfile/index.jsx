@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
 import AvatarIMG from "../assets/burritouser.jpg";
 import { useHistory } from "react-router-dom";
 
