@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
+import { Stack } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -15,6 +16,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
+
 
 export default function RegisterForm() {
     const [values, setValues] = React.useState({
@@ -23,7 +26,7 @@ export default function RegisterForm() {
     });
     const [userType, setUserType] = useState(true);
 
-    const [i, i18n] = useTranslation("global");
+    const [i] = useTranslation("global");
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -41,6 +44,8 @@ export default function RegisterForm() {
     };
 
     const handleSubmit = (event) => {
+
+        
         event.preventDefault();
         let options = {};
         if (event.target.password.value === event.target.repeatpassword.value) {
@@ -61,6 +66,7 @@ export default function RegisterForm() {
     
                 console.log(event.target.userType.value)
             } else {
+                
                 options = {
                     method: "POST",
                     headers: {
@@ -75,7 +81,6 @@ export default function RegisterForm() {
                         usertype:event.target.userType.value
                     }),
                 };
-    
                 console.log(event.target.userType.value)
             }
             // llamo al registro
@@ -83,8 +88,9 @@ export default function RegisterForm() {
                 .then((r) => r.json())
                 .then((d) => console.log(d));
         } else {
-            // Muestro al usuario el error de que las passwords no coinciden
+            alert('El usuario ya existe')
         }
+        
     };
 
     const handleUserChange = (event) => {
@@ -96,7 +102,7 @@ export default function RegisterForm() {
     return (
 
         <Box marginLeft="20px" marginTop="20px">
-            <form onSubmit={handleSubmit}>
+            <Stack component="form" onSubmit={handleSubmit} >
                 <FormControl sx={{ m: 2, width: '30ch' }} >
                     <TextField id="outlined-basic" name='name' label={i("menu-registro.name")} variant="outlined" />
                 </FormControl>
@@ -175,7 +181,7 @@ export default function RegisterForm() {
                     />
                     <Button variant="contained" type='submit' sx={{ mt: "20px" }}>{i("menu-registro.send-button")}</Button>
                 </FormControl>
-            </form>
+            </Stack>
         </Box>
     );
 }

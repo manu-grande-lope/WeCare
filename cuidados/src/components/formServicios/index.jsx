@@ -15,17 +15,17 @@ const services = [
     {
         value: 'pets',
         label: 'menu-registro.pets',
-        icon: <PetsIcon />
+        icon: <PetsIcon sx={{marginRight:"10px"}}/>
     },
     {
         value: 'menu-registro.elderly',
         label: 'menu-registro.elderly',
-        icon: <ElderlyIcon />
+        icon: <ElderlyIcon sx={{marginRight:"10px"}} />
     },
     {
         value: 'menu-registro.children',
         label: 'menu-registro.children',
-        icon: <ChildFriendlyIcon />
+        icon: <ChildFriendlyIcon sx={{marginRight:"10px"}}/>
     }
 ];
 
@@ -56,7 +56,7 @@ export default function ServicesForm() {
                         helperText=''
                     >
                         {services.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                            <MenuItem key={option.value} value={option.value} >
                                 {option.icon}{i(option.label)}
                             </MenuItem>
                         ))}

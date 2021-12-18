@@ -11,6 +11,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
+import { Stack, Grid } from '@mui/material';
+import TextClaimLogin from '../textClaim2';
 
 export default function Login() {
     let history = useHistory();
@@ -61,9 +63,10 @@ export default function Login() {
         }
     };
     return (
-        <Box marginLeft="25px" marginTop="20px">
-            <form onSubmit={handleSubmit}>
-                <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
+        <Grid>
+            <Grid item container xs={12} lg={4}>
+        <Stack marginLeft="0px" marginTop="20px" component="form" onSubmit={handleSubmit} back sx={{backgroundColor:'white', borderRadius:"5px"}}>
+                <FormControl sx={{ m: 2, width: '30ch'}} variant="outlined" color="secondary">
                     <TextField id="outlined-basic" name='name' label={i("menu-login.name")} variant="outlined" />
                 </FormControl>
                 <FormControl sx={{ m: 2, width: '30ch' }} variant="outlined" color="secondary">
@@ -90,7 +93,11 @@ export default function Login() {
                     />
                 </FormControl>
                 <Button type="submit" variant="contained" sx={{ m: 6, width: '30ch' }}>{i("menu-registro.send-button")}</Button>
-            </form>
-        </Box>
+        </Stack>
+        </Grid>
+        <Grid item container  xs={12} lg={12} >
+            <TextClaimLogin/>
+        </Grid>
+        </Grid>
     )
 }

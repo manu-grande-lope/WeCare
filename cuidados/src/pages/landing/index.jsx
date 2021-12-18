@@ -3,15 +3,20 @@ import { Grid } from '@mui/material';
 import ServicesForm from '../../components/formServicios/index.jsx';
 import CarouselCaretakers from '../../components/carouselEjemplo/index.jsx';
 import Banner from '../../components/banner/index.jsx';
+import TextClaim from '../../components/textClaim/index.jsx';
 
 function Landing() {
 
   return (
-    <Grid xs={12} container>
-      <Grid item container mt="20px" justifyContent="space-between" flexDirection="row" flexWrap="wrap">
+    <Grid container>
+      <Grid item container xs={12} mt="20px" spacing={2} justifyContent="space-around" flexDirection="row-reverse" flexWrap="wrap" >
+      <CarouselCaretakers />
         <ServicesForm />
-        <CarouselCaretakers />
+       
+        </Grid>
+        <Grid>
         <Banner/>
+
         </Grid>
     </Grid>
   );

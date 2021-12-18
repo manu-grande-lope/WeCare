@@ -20,7 +20,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 const styles = {
   gridContainer: {
     backgroundImage: `url(${Hands})`,
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    
   }
 };
 
@@ -30,7 +31,7 @@ function App() {
     <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
-        <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px" }} xs={12}>
+    <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px" }} xs={12}>
           <Header />
           </Grid>
           <main className='main__style'>
@@ -46,7 +47,9 @@ function App() {
               <RegisterForm />
           </Route>
           <Route path="/login">
+            <Grid item container justifyContent="center">
               <Login/>
+            </Grid>
           </Route>
           <Route path="/privatepolicy">
               <PrivatePolicy/>

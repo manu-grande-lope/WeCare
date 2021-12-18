@@ -3,8 +3,9 @@
         "Hello-world": "Elije tu idioma"
     },
     "claim":{
-        "claim-phrase": "Nos preocupamos por ti, y por ellos.",
-        "catch-phrase": "Cuidadores para todo tipo de necesidad."
+        "claim-phrase": "Bienvenido a WECARE",
+        "catch-phrase": "Cuidadores para todo tipo de necesidad.",
+        "catch-phrase2": "Déjalo en nuestras manos."
     },
     "menu":{
         "services":"Servicios",

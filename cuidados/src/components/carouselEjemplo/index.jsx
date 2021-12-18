@@ -51,7 +51,7 @@ function Item(item) {
             p={4}
             flexWrap="wrap">
             <ImageAvatars/>
-            <Stack flexWrap={true} gap={0} alignItems="flex-start">
+            <Stack flexWrap={true} gap={0} alignItems="flex-start" sx={{backgroundColor:'logo'}} >
                 <Stack spacing={2} p={1} sx={{ marginTop:"20px", marginLeft:"-6.25rem"}}>
                     <Typography variant='h4'>{item.item.name}</Typography>
                     <Typography variant='h5'>Cuidador de {item.item.cuida}</Typography>

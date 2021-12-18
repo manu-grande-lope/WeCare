@@ -4,7 +4,7 @@ import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 
-export default function TextClaim() {
+export default function TextClaimLogin() {
     const [i] = useTranslation("global");
 
     return (

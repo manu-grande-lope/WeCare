@@ -3,8 +3,9 @@
         "Hello-world": "Choose your languaje"
     },
     "claim":{
-        "claim-phrase": "We care for you, we care for them.",
-        "catch-phrase": "Caretakers for every necessity."
+        "claim-phrase": "Welcome to WECARE.",
+        "catch-phrase": "Caretakers for every necessity.",
+        "catch-phrase2": "Leave it in our hands."
     },
     "menu":{
         "services":"Services",

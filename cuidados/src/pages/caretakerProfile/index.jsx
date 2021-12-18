@@ -23,6 +23,8 @@ function ImageAvatars() {
 export default function CaretakerProfile() {
     let history = useHistory();
     const [i] = useTranslation("global");
+
+
     const handleDeleteUser = (event) => {
         console.log('ejecuta funcion')
         event.preventDefault();
@@ -37,6 +39,8 @@ export default function CaretakerProfile() {
                 token: token
             })
         }
+
+
         //llamo al login
         fetch('http://localhost:3001/user/account', options)
             .then(r => {
@@ -66,9 +70,8 @@ export default function CaretakerProfile() {
     };
 
     return (
-        <form>
             <Stack component='form'
-
+                sx={{backgroundColor:'white'}}
                 noValidate
                 autoComplete='off'
                 justifyContent='center'
@@ -80,8 +83,8 @@ export default function CaretakerProfile() {
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                 </Typography>
-                <TextField id="outlined-basic" name="name" label={i("menu-registro.name")} variant="outlined" value='nombre por props que se pueda modificar' />
-                <TextField id="outlined-basic" name="email" label="Email" variant="outlined" value='email por props modificable' />
+                <TextField id="outlined-basic" name="name" label={i("menu-registro.name")} variant="outlined"/>
+                <TextField id="outlined-basic" name="email" label="Email" variant="outlined" />
                 <TextField id="outlined-basic" multiline={true} minRows="5" name="descripcion" label={i("menu-registro.description")} variant="outlined" />
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.modify")}</Button>
                 <Button type='submit' size="small" variant='contained'>{i("caretaker.messages")}</Button>
@@ -107,6 +110,5 @@ export default function CaretakerProfile() {
                     sx={{ color: 'alert.delete' }}
                     startIcon={<DeleteIcon />} onClick={handleDeleteUser}>{i("caretaker.delete")}</Button>
             </Stack>
-        </form>
     );
 }

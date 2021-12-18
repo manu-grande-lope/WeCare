@@ -6,9 +6,10 @@ export default function Header() {
 
 
     return (
-        <Grid container justifyContent="space-between">
+        <Grid container justifyContent="space-around" p={4}>
                 <ResponsiveAppBar/>
                 <TextClaim/>
+                
         </Grid>
     )
 }
