@@ -17,7 +17,7 @@ import { useHistory } from "react-router-dom";
 
 export default function RegisterForm() {
 
-    const [values, setValues] = React.useState({
+    const [passValue, setPassValue] = useState({
         password: '',
         showPassword: false,
     });
@@ -26,13 +26,13 @@ export default function RegisterForm() {
     const [i] = useTranslation("global");
 
     const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+        setPassValue({ ...passValue, [prop]: event.target.value });
     };
 
     const handleClickShowPassword = () => {
-        setValues({
-            ...values,
-            showPassword: !values.showPassword,
+        setPassValue({
+            ...passValue,
+            showPassword: !passValue.showPassword,
         });
     };
 
@@ -138,7 +138,7 @@ export default function RegisterForm() {
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
-                        type={values.showPassword ? 'text' : 'password'}
+                        type={passValue.showPassword ? 'text' : 'password'}
                         name='password'
                         onChange={handleChange('password')}
                         endAdornment={
@@ -149,7 +149,7 @@ export default function RegisterForm() {
                                     onMouseDown={handleMouseDownPassword}
                                     edge="end"
                                 >
-                                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                    {passValue.showPassword ? <VisibilityOff /> : <Visibility />}
                                 </IconButton>
                             </InputAdornment>
                         }
@@ -161,7 +161,7 @@ export default function RegisterForm() {
                     <OutlinedInput
                         id="repeat-password"
                         name='repeatpassword'
-                        type={values.showPassword ? 'text' : 'password'}
+                        type={passValue.showPassword ? 'text' : 'password'}
                         onChange={handleChange('password')}
                         endAdornment={
                             <InputAdornment position="end">
@@ -171,7 +171,7 @@ export default function RegisterForm() {
                                     onMouseDown={handleMouseDownPassword}
                                     edge="end"
                                 >
-                                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                    {passValue.showPassword ? <VisibilityOff /> : <Visibility />}
                                 </IconButton>
                             </InputAdornment>
                         }

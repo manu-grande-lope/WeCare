@@ -52,9 +52,21 @@ export default function Login() {
             }
             //llamo al login
             fetch('http://localhost:3001/auth/login', options)
-                .then(r => r.json())
-                .then(d => sessionStorage.setItem('token', d.access_token))
-            history.push("/account")
+                .then(r => {
+                    console.log(r);
+                    if (r.status === 404) {
+                        history.push("/notfound")
+                        return undefined
+                    } else {
+                        return r.json();
+                    }
+                })
+                .then(d => {
+                    if (d !== undefined) {
+                        sessionStorage.setItem('token', d?.access_token)
+                        history.push("/account")
+                    }
+                })  
         } else {
             console.log('error fatal, todo mal, shiiiiiiit')
         }
