@@ -22,8 +22,7 @@ const settings = ['menu-settings.login', 'menu-settings.register', 'menu-setting
 const pathSettings = ['/login', '/register', '/account', '/logout', '/caretaker-public'];
 
 const ResponsiveAppBar = () => {
-    const [i, i18n] = useTranslation("global");
-    console.log(i(pages[0]))
+    const [i] = useTranslation("global");
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 

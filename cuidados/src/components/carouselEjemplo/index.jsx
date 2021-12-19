@@ -117,9 +117,10 @@ export default function ServicesAndCarousel() {
         )
     }
     function Item(item) {
+        console.log(item)
         const history = useHistory();
         function handleContact(){
-            history.push("/caretaker-public")
+            history.push(`/caretaker-public/${item.item._id}`)
         };
 
 

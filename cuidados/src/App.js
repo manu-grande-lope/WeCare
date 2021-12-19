@@ -65,7 +65,7 @@ function App() {
           <Route path="/notfound">
               <NotFound/>
           </Route>
-          <Route path="/caretaker-public">
+          <Route path="/caretaker-public/:id">
               <CaretakerPublicProfile/>
           </Route>
           {/* RUTAS PUBLICAS  */}

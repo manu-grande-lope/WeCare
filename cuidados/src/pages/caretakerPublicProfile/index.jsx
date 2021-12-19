@@ -6,14 +6,32 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 export default function CaretakerPublicProfile() {
 
+    const { id } = useParams();
+
+    useEffect(() => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            },
+
+        }
+        fetch(`http://localhost:3001/user/publicProfile?id=${id}`, options)
+            .then(r => r.json())
+            .then(d => {
+                setUserInfo(d)
+            })
+    }, []);
+    
     function ImageAvatars() {
         return (
             <Avatar
-                alt="Remy Sharp"
-                src={AvatarIMG}
+            alt="Remy Sharp"
+            src={AvatarIMG}
                 sx={{ width: 200, height: 200, alignSelf: 'center' }}
 
             />
@@ -24,19 +42,7 @@ export default function CaretakerPublicProfile() {
 
     const [userInfo, setUserInfo] = useState(0);
 
-    useEffect(() => {
-        const token = sessionStorage.getItem('token');
-        const options = {
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-        }
-        fetch('http://localhost:3001/user/', options)
-            .then(r => r.json())
-            .then(d => setUserInfo(d))
-    }, []);
+
 
 
 
@@ -47,8 +53,8 @@ export default function CaretakerPublicProfile() {
                 <ImageAvatars />
             </Grid>
             <Grid item container justifyContent="center">
-                    <Typography variant="h6">Hola, soy "User Name con props"</Typography>
-                    <Typography variant="h6">Y cuido, "Que cuida"</Typography>
+                <Typography variant="h6">Hola, soy "User Name con props"</Typography>
+                <Typography variant="h6">Y cuido, "Que cuida"</Typography>
             </Grid>
         </Grid>
     )
