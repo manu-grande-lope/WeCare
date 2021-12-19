@@ -17,6 +17,8 @@ import { useHistory } from "react-router-dom";
 
 export default function RegisterForm() {
 
+    const history = useHistory()
+
     const [passValue, setPassValue] = useState({
         password: '',
         showPassword: false,
@@ -84,7 +86,11 @@ export default function RegisterForm() {
             // llamo al registro
             fetch("http://localhost:3001/auth/register", options)
                 .then((r) => r.json())
-                .then((d) => console.log(d));
+                .then((d) => {
+                    if (d) {
+                        history.push("/account")
+                    }
+                });
         } else {
             alert('El usuario ya existe')
         }

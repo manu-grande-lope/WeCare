@@ -17,6 +17,7 @@ import CaretakerProfile from './pages/caretakerProfile';
 import ThemeProvider from './components/theme/theme-provider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './pages/notfoud';
+import CaretakerPublicProfile from './pages/caretakerPublicProfile/index.jsx';
 
 const styles = {
   gridContainer: {
@@ -63,6 +64,9 @@ function App() {
           </Route>
           <Route path="/notfound">
               <NotFound/>
+          </Route>
+          <Route path="/caretaker-public">
+              <CaretakerPublicProfile/>
           </Route>
           {/* RUTAS PUBLICAS  */}
           {/* RUTAS PRIVADAS  */}

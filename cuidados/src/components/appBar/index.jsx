@@ -16,10 +16,10 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
 
 
-const pages = ['menu.services', 'menu.pricing', 'menu.about-us'];
+const pages = ['menu.services', 'menu.pricing', 'menu.about-us', 'caretaker-public'];
 const pathPages = ['/services', '/pricing', '/aboutUs']
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
-const pathSettings = ['/login', '/register', '/account', '/logout'];
+const pathSettings = ['/login', '/register', '/account', '/logout', '/caretaker-public'];
 
 const ResponsiveAppBar = () => {
     const [i, i18n] = useTranslation("global");

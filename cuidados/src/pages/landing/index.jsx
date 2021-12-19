@@ -7,7 +7,7 @@ function Landing() {
 
   return (
     <Grid container>
-      <Grid item container xs={12} mt="20px" spacing={2} justifyContent="space-around" flexDirection="row-reverse" flexWrap="wrap" >
+      <Grid item container xs={12} mt="20px" spacing={0} justifyContent="space-around" flexDirection="row-reverse" flexWrap="wrap" >
       <ServicesAndCarousel/>
         </Grid>
         <Grid>
