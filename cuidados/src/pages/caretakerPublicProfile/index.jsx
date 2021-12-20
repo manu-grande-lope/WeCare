@@ -1,4 +1,4 @@
-import { Grid, Stack } from "@mui/material";
+import { Grid, Stack, Box } from "@mui/material";
 import AvatarIMG from "../assets/burritouser.jpg";
 import { Typography } from "@mui/material";
 import { Avatar } from "@mui/material";
@@ -10,9 +10,25 @@ import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from '@mui/material/Modal';
 
+
+
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
 export default function CaretakerPublicProfile() {
     const history = useHistory()
     const [sentCorrectly, setSentCorrectly] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
     const [i] = useTranslation("global");
     const [userInfo, setUserInfo] = useState(0);
     const { id } = useParams();
@@ -28,6 +44,7 @@ export default function CaretakerPublicProfile() {
             .then(r => r.json())
             .then(d => {
                 setUserInfo(d)
+                console.log(d)
             })
     }, [id]);
     function ImageAvatars() {
@@ -41,6 +58,8 @@ export default function CaretakerPublicProfile() {
     }
 
     function sendMessage(event) {
+        event.preventDefault()
+        console.log('sendMessage funciona')
         const token = sessionStorage.getItem('token');
         if (token) {
             const options = {
@@ -59,45 +78,56 @@ export default function CaretakerPublicProfile() {
                     if (r.status === 200) {
                         setSentCorrectly(true)
                     } else {
-                        setSentCorrectly("error")
+                        setSentCorrectly(false)
                     }
+                    console.log('Mensaje enviado o no')
+                    setOpenModal(true)
                 })
         } else {
             history.push("/login")
         }
     }
-    const handleClose = () => setSentCorrectly(false);
+
+    // meter una condicional para que salga la modal y que si no está logeado vaya al login al cerrar modal
+    const handleClose = () => setOpenModal(false)
 
     return (
         <Grid>
 
-            {/* <Modal
-                open={!!sentCorrectly}
+            <Modal
+                open={openModal}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                {() => {
-                    if (sentCorrectly) {
-                        return "Mensaje enviado correctamente"
-                    } else if (sentCorrectly === "error") {
-                        return "Ha ocurrido un error"
-                    }
-                }}
 
-            </Modal> */}
+
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                {sentCorrectly ? <p>{i("modal.title")}</p> : <p>{i("modal.titleError")}</p>}
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    {sentCorrectly ? <p>{i("modal.text")}</p> : <p>{i("modal.textError")}</p>}
+                    </Typography>
+                </Box>
+
+                {/* {sentCorrectly ? <p>OK</p> : <p>NOT OK</p>} */}
+
+            </Modal>
 
             <Grid item container xs={12} lg={12} justifyContent="center" mt={7} mb={7}>
                 <ImageAvatars />
             </Grid>
-            <Grid item container justifyContent="center">
-                <Typography variant="h6">Hola, soy "User Name con props"</Typography>
-                <Typography variant="h6">Y cuido, "Que cuida"</Typography>
+            <Grid item container direction="column" xs={12} justifyContent="center">
+                <Typography variant="h7">{userInfo.name} { }</Typography>
+                <Typography variant="h7">Cuidadora de {userInfo.cuida}</Typography>
+                <Typography variant="h7">Descripción</Typography>
             </Grid>
-            <Grid iten container>
+            <Grid item container>
                 <Stack component="form" onSubmit={sendMessage}>
                     <TextField id="outlined-basic" multiline={true} minRows="5" name="description" label="Contacta conmigo" variant="outlined" />
                     <Button
+                        sx={{ marginTop: "20px" }}
                         type='submit'
                         variant='contained'
                         size='medium'

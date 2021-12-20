@@ -9,13 +9,13 @@ export default function TextClaim() {
 
     return (
         <Stack color="white" mb='60px' >
-            <Typography color="logo" fontSize="70px" fontWeight="900" variant="h1" >
+            <Typography color="logo" fontSize="50px" fontWeight="900" variant="h4" >
             {i ("claim.claim-phrase")}
             </Typography>
-            <Typography fontWeight="900" variant="h4">
+            <Typography fontWeight="900" variant="h5">
             {i ("claim.catch-phrase")}
             </Typography>
-            <Typography fontWeight="900" variant="h4">
+            <Typography fontWeight="900" variant="h5">
             {i ("claim.catch-phrase2")}
             </Typography>
         </Stack>

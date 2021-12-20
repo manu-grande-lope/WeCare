@@ -33,7 +33,7 @@ function App() {
     <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
-    <Grid xs={12} container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
+    <Grid container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
           <Header />
           </Grid>
           <main className='main__style'>

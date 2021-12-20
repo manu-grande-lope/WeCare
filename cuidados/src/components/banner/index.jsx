@@ -1,25 +1,13 @@
 import { Grid, Paper, Stack, Typography } from "@mui/material";
-import { width } from "@mui/system";
-import Splatter from '../../pages/assets/backservices.jpg';
 
 
 
-const styles = {
-    gridContainer: {
-        backgroundImage: `url(${Splatter})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-
-    }
-};
 
 
 export default function Banner() {
     return (
 
-        <Grid display='flex' flexDirection="row" xs={12} p={6} flexWrap="wrap" style={styles.gridContainer} border={1} borderColor={'primary.main'}>
+        <Grid display='flex' flexDirection="row" xs={12} p={6} flexWrap="wrap" border={1} borderColor={'primary.main'}>
             <Grid item container justifyContent="center" p={6} >
                 <Paper sx={{ padding: "20px" }} elevation={1}  >
                     <Typography variant="h5">Cuidado de mascotas</Typography>

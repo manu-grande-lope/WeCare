@@ -90,7 +90,7 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page, indx) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page} index={indx} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
                                         <Link className='collapsed__link__style' to={pathPages[indx]} >{i(page)}</Link>
                                     </Typography>
@@ -142,7 +142,6 @@ const ResponsiveAppBar = () => {
                                     <Button to={pathSettings[indx]}
                                         variant="text"
                                         onClick={()=>handleLogout(indx)}
-                                        // onClick={pathSettings[indx]}
                                         >
                                         <Link className='collapsed__link__style' to={pathSettings[indx]} >{i(setting)}</Link></Button>
                                 </MenuItem>

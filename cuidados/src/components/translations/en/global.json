@@ -45,5 +45,12 @@
         "alert":"LISTEN!",
         "delete":"DELETE ACCOUNT",
         "text-alert":"In WECARE we do not share your data with third parties, this information is yours and only yours, do not worry about your transactions with other users, we are only mediators, thank you for trusting our platform."
+    },
+    "modal":{
+        "title":"Thanks!",
+        "text": "Your message has been sent.",
+        "titleError": "There´s been a problem",
+        "textError":"Please login to send a message"
+            
     }
 }
