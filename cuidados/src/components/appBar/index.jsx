@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {React, useState} from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,15 +16,15 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
 
 
-const pages = ['menu.services', 'menu.pricing', 'menu.about-us', 'caretaker-public'];
+const pages = ['menu.services', 'menu.pricing', 'menu.about-us'];
 const pathPages = ['/services', '/pricing', '/aboutUs']
 const settings = ['menu-settings.login', 'menu-settings.register', 'menu-settings.account', 'menu-settings.logout'];
-const pathSettings = ['/login', '/register', '/account', '/logout', '/caretaker-public'];
+const pathSettings = ['/login', '/register', '/account', '/logout'];
 
 const ResponsiveAppBar = () => {
     const [i] = useTranslation("global");
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         }
     } 
     return (
-        <AppBar position="static" color="transparent" elevation={0}>
+        <AppBar position="static" color={'primary'} elevation={0}>
             <Container maxWidth="xl" >
                 <Toolbar disableGutters>
                     <Typography

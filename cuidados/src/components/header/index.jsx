@@ -6,9 +6,11 @@ export default function Header() {
 
 
     return (
-        <Grid container justifyContent="space-around" p={4}>
+        <Grid item container justifyContent="space-evenly" sx={{backgroundColor:'primary.main'}}>
                 <ResponsiveAppBar/>
+                {/* <Grid item container alignSelf="flex-start" ml={8}>
                 <TextClaim/>
+                </Grid> */}
                 
         </Grid>
     )

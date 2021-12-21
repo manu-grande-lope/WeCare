@@ -3,7 +3,6 @@ import { Avatar, Stack, Typography, Grid } from '@mui/material';
 import Carousel from 'react-material-ui-carousel'
 import { Button } from '@mui/material'
 import './style.css';
-import AvatarIMG from "../../pages/assets/burritouser.jpg";
 import HoverRating from './rating';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
@@ -14,7 +13,12 @@ import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
 import { useTranslation } from "react-i18next";
 import { useHistory } from 'react-router-dom';
 import Skeleton from '@mui/material/Skeleton';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+
+import TextClaim from '../textClaim/index.jsx';
+
+
+
+
 
 export default function ServicesAndCarousel() {
     const [service, setService] = useState('Elige un servicio');
@@ -43,11 +47,11 @@ export default function ServicesAndCarousel() {
             setState(event.target.value);
         };
         return (
-            <Grid xs={9}>
+            <Grid >
                 <Paper elevation="1"
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 4, pr: 0, width: '90%' },
+                        '& .MuiTextField-root': { m: 4, pr: 0, width: '90%' }, mt:'25px'
                     }}
                     noValidate
                     autoComplete="off"
@@ -68,7 +72,6 @@ export default function ServicesAndCarousel() {
                                 </MenuItem>
                             ))}
                         </TextField>
-                        {/*<BasicDateRangePicker />*/}
                     </Stack>
                 </Paper>
 
@@ -78,16 +81,16 @@ export default function ServicesAndCarousel() {
 
     /* ---------------------------- CAROUSEL ---------------------------------- */
 
-    function ImageAvatars() {
-        return (
-            <Avatar
-                alt="Remy Sharp"
-                src={AvatarIMG}
-                sx={{ width: 200, height: 200, alignSelf: 'center' }}
+    // function ImageAvatars() {
+    //     return (
+    //         <Avatar
+    //             alt="Remy Sharp"
+    //             src={`http://localhost:3001/public/images/${caretakers.pic}`}
+    //             sx={{ width: 200, height: 200, alignSelf: 'center' }}
 
-            />
-        );
-    }
+    //         />
+    //     );
+    // }
 
 
     function CarouselCaretakers({ state }) {
@@ -99,6 +102,7 @@ export default function ServicesAndCarousel() {
             fetch('http://localhost:3001/user/getallcaretakers')
                 .then(r => r.json())
                 .then(d => {
+                    console.log(d)
                     setCarouselData(d)
                     setCaretakers(d)
                     setIsLoading(false)
@@ -109,8 +113,10 @@ export default function ServicesAndCarousel() {
                 setCarouselData(caretakers.filter((item) => item.cuida === state))
             }
         }, [state, caretakers])
+
+
         return (
-            <Grid xs={5} md={6} lg={8} mt={7}>
+            <Grid xs={9} md={6} lg={6} mt={7} mb={7} className='carousel__style--alpha' >
                 {isLoading ? <Skeleton variant="rectangular" className="skeleton__styles"></Skeleton> :
                 <Carousel className="carousel__style"
                     autoPlay={true}
@@ -133,15 +139,26 @@ export default function ServicesAndCarousel() {
         };
 
 
+        function ImageAvatars() {
+            return (
+                <Avatar
+                    alt="Remy Sharp"
+                    src={`http://localhost:3001/public/images/${item.item.pic}`}
+                    sx={{ width: 200, height: 200, alignSelf: 'center', marginTop:'20px' }}
+    
+                />
+            );
+        }
 
         return (
             <Stack direction="column"
                 justifyContent="center"
                 alignItems="center"
                 spacing={2}
-                flexWrap="wrap">
-                <ImageAvatars />
-                <Stack flexWrap={true} gap={0} alignItems="cemter" sx={{ backgroundColor: 'logo' }} >
+                flexWrap="wrap"
+                >
+                <ImageAvatars/>
+                <Stack flexWrap={true} alignItems="cemter" color={'logo.main'}>
                     <Stack spacing={2} p={1} sx={{ marginTop: "20px" }}>
                         <Typography variant='h4'>{item.item.name}</Typography>
                         <Typography variant='h5'>Cuidador de {item.item.cuida}</Typography>
@@ -160,8 +177,15 @@ export default function ServicesAndCarousel() {
 
     return (
         <Fragment>
+            <Stack>
+            <TextClaim/>
+
             <ServicesForm state={service} setState={setService} />
-            <CarouselCaretakers state={service} />
+            
+            </Stack>
+            <CarouselCaretakers state={service}/>
+
+            
         </Fragment>
     )
 

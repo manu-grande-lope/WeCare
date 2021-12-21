@@ -2,7 +2,6 @@ import {React, useState} from 'react';
 import { BrowserRouter, Switch, Route,} from 'react-router-dom';
 import { Grid, Stack} from '@mui/material';
 import './App.css';
-import Hands from './pages/assets/hands.jpg'; // Import using relative path
 import Landing from './pages/landing/index.jsx';
 import Header from './components/header/index.jsx';
 import RegisterForm from './components/registerForm/index.jsx';
@@ -19,21 +18,13 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './pages/notfoud';
 import CaretakerPublicProfile from './pages/caretakerPublicProfile/index.jsx';
 
-const styles = {
-  gridContainer: {
-    backgroundImage: `url(${Hands})`,
-    backgroundRepeat: 'no-repeat',
-    
-  }
-};
-
 function App() {
 
   return (
     <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
-    <Grid container justifyContent="center" style={styles.gridContainer} sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
+    <Grid container  sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
           <Header />
           </Grid>
           <main className='main__style'>

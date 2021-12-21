@@ -11,7 +11,6 @@ import Button from '@mui/material/Button';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
 import { Stack, Grid } from '@mui/material';
-import TextClaimLogin from '../textClaim2';
 
 export default function Login() {
     let history = useHistory();
@@ -105,7 +104,6 @@ export default function Login() {
                 </Stack>
             </Grid>
             <Grid item container xs={12} lg={12} >
-                <TextClaimLogin />
             </Grid>
         </Grid>
     )

@@ -1,11 +1,10 @@
 import { Grid, Stack, Box } from "@mui/material";
-import AvatarIMG from "../assets/burritouser.jpg";
 import { Typography } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, setTimeOut } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from '@mui/material/Modal';
@@ -51,15 +50,15 @@ export default function CaretakerPublicProfile() {
         return (
             <Avatar
                 alt="Remy Sharp"
-                src={AvatarIMG}
+                src={`http://localhost:3001/public/images/${userInfo.pic}`}
                 sx={{ width: 200, height: 200, alignSelf: 'center' }}
+
             />
         );
     }
 
     function sendMessage(event) {
         event.preventDefault()
-        console.log('sendMessage funciona')
         const token = sessionStorage.getItem('token');
         if (token) {
             const options = {
@@ -80,34 +79,31 @@ export default function CaretakerPublicProfile() {
                     } else {
                         setSentCorrectly(false)
                     }
-                    console.log('Mensaje enviado o no')
-                    setOpenModal(true)
                 })
+                setOpenModal(true)
         } else {
-            history.push("/login")
+            console.log("set time out")
+            setOpenModal(true)
+            setTimeout(() => {
+                history.push("/login")
+            }, 2000)
         }
     }
-
-    // meter una condicional para que salga la modal y que si no está logeado vaya al login al cerrar modal
     const handleClose = () => setOpenModal(false)
-
     return (
         <Grid>
-
             <Modal
                 open={openModal}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-
-
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                {sentCorrectly ? <p>{i("modal.title")}</p> : <p>{i("modal.titleError")}</p>}
+                        {sentCorrectly ? <p>{i("modal.title")}</p> : <p>{i("modal.titleError")}</p>}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    {sentCorrectly ? <p>{i("modal.text")}</p> : <p>{i("modal.textError")}</p>}
+                        {sentCorrectly ? <p>{i("modal.text")}</p> : <p>{i("modal.textError")}</p>}
                     </Typography>
                 </Box>
 

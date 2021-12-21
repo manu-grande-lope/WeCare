@@ -1,0 +1,10 @@
+
+
+.stackBanner__style{
+    background-image: url('../../pages/assets/dogs-medium.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    min-width: 100%;
+    max-height: 50vh;
+}

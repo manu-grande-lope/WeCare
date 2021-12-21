@@ -1,5 +1,4 @@
 import { Typography} from "@mui/material";
-import { Box} from "@mui/system";
 import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -8,15 +7,15 @@ export default function TextClaim() {
     const [i] = useTranslation("global");
 
     return (
-        <Stack color="white" mb='60px' >
-            <Typography color="logo" fontSize="50px" fontWeight="900" variant="h4" >
+        <Stack mb='60px' justifyContent="flex-start" flexDirection="column" maxWidth="600px">
+            <Typography  fontWeight="900" variant="h4" color={'primary'}>
             {i ("claim.claim-phrase")}
             </Typography>
-            <Typography fontWeight="900" variant="h5">
-            {i ("claim.catch-phrase")}
+            <Typography  fontSize={150} fontWeight="900" variant="h2" lineHeight={1} color={'primary'} >
+            WECARE
             </Typography>
-            <Typography fontWeight="900" variant="h5">
-            {i ("claim.catch-phrase2")}
+            <Typography  fontWeight="900" variant="h3" lineHeight={1} color={'primary'}>
+            {i ("claim.catch-phrase")}
             </Typography>
         </Stack>
     )

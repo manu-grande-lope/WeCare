@@ -27,7 +27,6 @@ export default function Footer() {
                     sx={{color:'logo.main'}}>
                         ENG</Button>
                 </Stack>
-                {/* <ThemeSwitch/> */}
                 <button id="theme" className="buttonTheme__style"><img alt="theming button" src={ThemePNG} className="buttonTheme__style--img" /></button>
             </Stack>
             <Stack gap={2}>
