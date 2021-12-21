@@ -56,7 +56,8 @@ export default function CaretakerProfile() {
     const { urlPreview, file } = stateImg;
     let history = useHistory();
     const [i] = useTranslation("global");
-    const [userInfo, setUserInfo] = useState({});
+    const [userInfo, setUserInfo] = useState(0);
+    console.log(userInfo)
     useEffect(() => {
         const token = sessionStorage.getItem('token');
         const options = {
@@ -69,10 +70,12 @@ export default function CaretakerProfile() {
         fetch('http://localhost:3001/user/', options)
             .then(r => r.json())
             .then(d => setUserInfo(d))
+            
     }, []);
 
 
     const handleDeleteUser = (event) => {
+
         event.preventDefault();
         const token = sessionStorage.getItem('token');
         const options = {
@@ -100,7 +103,7 @@ export default function CaretakerProfile() {
         const formData = new FormData(event.currentTarget);
         
         const options = {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
                 'authorization': `Bearer ${token}`,
             },
@@ -136,7 +139,7 @@ export default function CaretakerProfile() {
                 handleImageChange={handleImageChange}
                 urlPreview={urlPreview}
                 refId={refId}
-                defaultImg={userInfo ? `http://localhost:3001/public/images/${userInfo.pic}` : `http://localhost:3001/public/images/user.png`}
+                defaultImg={ userInfo  ? `http://localhost:3001/public/images/${userInfo.pic}` : `http://localhost:3001/public/images/user.png`}
                 rounded
             />
             <Typography gutterBottom variant="h5" component="div">

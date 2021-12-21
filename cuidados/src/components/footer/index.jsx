@@ -1,14 +1,21 @@
-import { Button, Grid, Stack } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Divider } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import ThemePNG from '../../pages/assets/night-mode-dark.png'
+// import ThemePNG from '../../pages/assets/night-mode-dark.png'
 import '../footer/style.css';
 
 
-export default function Footer() {
-    const [, i18n] = useTranslation("global");
+export default function Footer(props) {
+    const [i, i18n] = useTranslation("global");
+
+    // const handleTheme = ()=> {
+    //     props.changeMode()
+        
+    // }
+
+
 
     return (
         <Grid container sx={{ backgroundColor: 'primary.main', minHeight: "100px", width: "100%" }} direction="row"
@@ -27,12 +34,17 @@ export default function Footer() {
                     sx={{color:'logo.main'}}>
                         ENG</Button>
                 </Stack>
-                <button id="theme" className="buttonTheme__style"><img alt="theming button" src={ThemePNG} className="buttonTheme__style--img" /></button>
+                {/* <button id="theme" className="buttonTheme__style" onClick={handleTheme} ><img alt="theming button" src={ThemePNG} className="buttonTheme__style--img" /></button> */}
             </Stack>
             <Stack gap={2}>
                 <Link to="/privatepolicy">Politica de privacidad</Link>
                 <Link to="/terms">Terms and conditions</Link>
             </Stack>
+            <Stack ml={-100} gap>
+                <Link to='/services'>{i('menu.services')}</Link>
+                <Link to='/aboutUs'>{i('menu.about-us')}</Link>
+            </Stack>
+            <Typography color={'logo.main'} variant="body2"> 2021 © Manuel Lope</Typography>
         </Grid>
     )
 }

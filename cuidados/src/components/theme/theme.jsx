@@ -4,6 +4,7 @@ import ArvoBold from '../../pages/assets/fonts/Arvo-Bold.ttf';
 
 export const myTheme = createTheme({
     palette: {
+        mode: 'light',
         primary: {
             main: '#ef9a9a'
         },
@@ -16,6 +17,9 @@ export const myTheme = createTheme({
         alert: {
             main: '#fbc02d',
             delete: '#d84315'
+        },
+        textClaim: {
+            main: '#ffca28',
         },
         contrastThreshold: 3,
         tonalOffset: 0.2,
@@ -34,8 +38,9 @@ export const myTheme = createTheme({
             '"Apple Color Emoji"',
             '"Segoe UI Emoji"',
             '"Segoe UI Symbol"',
-        ].join(',')
+        ].join(','),
     },
+
     spacing: (factor) => {
 
         return `${0.25 * factor}rem`
@@ -58,16 +63,32 @@ export const myTheme = createTheme({
     },
 });
 
+
+myTheme.typography.h1 = {
+    [myTheme.breakpoints.down('md')]: {
+        fontSize: '3.5rem',
+    },
+};
+
+myTheme.typography.h3 = {
+    [myTheme.breakpoints.up('md')]: {
+        fontSize: '2.4rem',
+    },
+};
+
+
+myTheme.typography.h4 = {
+    [myTheme.breakpoints.down('md')]: {
+        fontSize: '1.5rem',
+    },
+};
+
+
 export const myDarkTheme = createTheme({
     palette: {
-        mode: 'dark',
-        primary: {
-            main: '#ef9fff',
-        },
-        secondary: {
-            main: '#ff45ff',
-        },
-    },
+        mode: 'dark'
+
+    }
 });
 
 

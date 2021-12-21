@@ -1,4 +1,4 @@
-import { Grid, Stack, Box } from "@mui/material";
+import { Grid, Stack, Box, useRadioGroup } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -8,6 +8,8 @@ import { useState, useEffect, setTimeOut } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from '@mui/material/Modal';
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 
 
 
@@ -23,6 +25,78 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
+
+const labels = {
+    0.5: 'Useless',
+    1: 'Useless+',
+    1.5: 'Poor',
+    2: 'Poor+',
+    2.5: 'Ok',
+    3: 'Ok+',
+    3.5: 'Good',
+    4: 'Good+',
+    4.5: 'Excellent',
+    5: 'Excellent+',
+};
+
+
+function HoverRating(props) {
+    const [value, setValue] = useState(0);
+    const [hover, setHover] = useState(-1);
+    const [canReview, setCanReview] = useState(true);
+
+    const changeRating = (event, newValue) => {
+        if (canReview) {
+            setCanReview(false)
+            const token = sessionStorage.getItem('token');
+            const options = {
+                method: 'POST',
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    review: newValue,
+                    userReviewedId: props.userInfo
+                }),
+            }
+            fetch('http://localhost:3001/user/reviews', options)
+                .then(r => r.json())
+                .then(d => setValue(d.average))
+        }
+        
+
+    }
+
+    return (
+        <Box
+            sx={{
+                width: 200,
+                display: 'flex',
+                alignItems: 'center',
+            }}
+        >
+            <Rating
+                name="hover-feedback"
+                value={value}
+                precision={0.5}
+                onChange={changeRating}
+                onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                }}
+                emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            />
+            {value !== null && (
+                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+            )}
+        </Box>
+    );
+}
+
+
+
+
+
 
 export default function CaretakerPublicProfile() {
     const history = useHistory()
@@ -43,7 +117,7 @@ export default function CaretakerPublicProfile() {
             .then(r => r.json())
             .then(d => {
                 setUserInfo(d)
-                console.log(d)
+                console.log(d, 'Aquí no entra')
             })
     }, [id]);
     function ImageAvatars() {
@@ -79,8 +153,8 @@ export default function CaretakerPublicProfile() {
                     } else {
                         setSentCorrectly(false)
                     }
+                    setOpenModal(true)
                 })
-                setOpenModal(true)
         } else {
             console.log("set time out")
             setOpenModal(true)
@@ -90,8 +164,20 @@ export default function CaretakerPublicProfile() {
         }
     }
     const handleClose = () => setOpenModal(false)
+
+
+
+
+
+
+
+
+
+
+
+
     return (
-        <Grid>
+        <Grid item container justifyContent="center">
             <Modal
                 open={openModal}
                 onClose={handleClose}
@@ -106,20 +192,19 @@ export default function CaretakerPublicProfile() {
                         {sentCorrectly ? <p>{i("modal.text")}</p> : <p>{i("modal.textError")}</p>}
                     </Typography>
                 </Box>
-
                 {/* {sentCorrectly ? <p>OK</p> : <p>NOT OK</p>} */}
-
             </Modal>
 
-            <Grid item container xs={12} lg={12} justifyContent="center" mt={7} mb={7}>
+            <Grid item container justifyContent="center" mt={7} mb={7}>
                 <ImageAvatars />
             </Grid>
-            <Grid item container direction="column" xs={12} justifyContent="center">
-                <Typography variant="h7">{userInfo.name} { }</Typography>
-                <Typography variant="h7">Cuidadora de {userInfo.cuida}</Typography>
-                <Typography variant="h7">Descripción</Typography>
-            </Grid>
-            <Grid item container>
+            <Stack direction="column">
+                <Stack direction="column" xs={12} justifyContent="center">
+                    <Typography variant="h7">{userInfo.name} { }</Typography>
+                    <Typography variant="h7">Cuidador de {userInfo.cuida}</Typography>
+                    <Typography variant="h7">{userInfo.description}</Typography>
+                </Stack>
+                <HoverRating userInfo={userInfo._id} />
                 <Stack component="form" onSubmit={sendMessage}>
                     <TextField id="outlined-basic" multiline={true} minRows="5" name="description" label="Contacta conmigo" variant="outlined" />
                     <Button
@@ -129,7 +214,14 @@ export default function CaretakerPublicProfile() {
                         size='medium'
                     >Send</Button>
                 </Stack>
-            </Grid>
+            </Stack>
         </Grid >
     )
 }
+
+
+
+
+
+
+

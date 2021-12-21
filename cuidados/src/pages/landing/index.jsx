@@ -13,10 +13,10 @@ function Landing() {
 
   return (
     <Grid container>
-      <Grid item container  xs={12} mt="20px" minHeight="50vh"  spacing={0} justifyContent="space-around" flexWrap="wrap" >
+      <Grid item container  xs={12} pl={2}  mt={5} minHeight="50vh"   justifyContent="space-around" flexWrap="wrap" >
       <ServicesAndCarousel/>
         </Grid>
-        <Grid item container xs={12} minHeight={700}>
+        <Grid item container xs={12} min>
         <Banner/>
         </Grid>
     </Grid>

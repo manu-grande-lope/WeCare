@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         }
     } 
     return (
-        <AppBar position="static" color={'primary'} elevation={0}>
+        <AppBar position="static" color={'primary'} elevation={2}>
             <Container maxWidth="xl" >
                 <Toolbar disableGutters>
                     <Typography
@@ -119,7 +119,7 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="http://localhost:3001/public/images/user2.png" />
                             </IconButton>
                         </Tooltip>
                         <Menu

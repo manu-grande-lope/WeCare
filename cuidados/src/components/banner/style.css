@@ -3,8 +3,19 @@
 .stackBanner__style{
     background-image: url('../../pages/assets/dogs-medium.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position-y: center;
-    min-width: 100%;
-    max-height: 50vh;
+}
+
+.stackBanner__style--elder{
+    background-image: url('../../pages/assets/elder2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+}
+.stackBanner__style--children{
+    background-image: url('../../pages/assets/children.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
 }
