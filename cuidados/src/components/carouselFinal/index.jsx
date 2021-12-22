@@ -49,7 +49,7 @@ export default function ServicesAndCarousel() {
         };
         return (
             <Grid >
-                <Paper elevation="1"
+                <Paper elevation={1}
                     component="form"
                     sx={{
                         '& .MuiTextField-root': { m: 4, pr: 0, width: '90%' }, mt: '25px'
@@ -82,16 +82,6 @@ export default function ServicesAndCarousel() {
 
     /* ---------------------------- CAROUSEL ---------------------------------- */
 
-    // function ImageAvatars() {
-    //     return (
-    //         <Avatar
-    //             alt="Remy Sharp"
-    //             src={`http://localhost:3001/public/images/${caretakers.pic}`}
-    //             sx={{ width: 200, height: 200, alignSelf: 'center' }}
-
-    //         />
-    //     );
-    // }
 
     const labels = {
         0: 'Useless',
@@ -104,7 +94,7 @@ export default function ServicesAndCarousel() {
 
     function StaticRating(props) {
         const [value] = useState(Math.round(props.rating));
-        const [hover, setHover] = useState(-1);
+        const [hover] = useState(-1);
 
         return (
             <Box
@@ -162,15 +152,13 @@ export default function ServicesAndCarousel() {
 
 
         return (
-            <Grid xs={9} md={6} lg={6} mt={7} mb={7} className='carousel__style--alpha' >
+            <Grid item xs={10.5} md={7} lg={5} mt={7} mb={7} className='carousel__style--alpha' >
                 {isLoading ? <Skeleton variant="rectangular" className="skeleton__styles"></Skeleton> :
                     <Carousel className="carousel__style"
                         autoPlay={true}
                         stopAutoPlayOnHover={true}
                         swipe={true}
                     >
-
-
                         {carouselData.map((item, i) => <Item key={i} item={item} />)}
                     </Carousel>}
             </Grid>
@@ -204,16 +192,15 @@ export default function ServicesAndCarousel() {
                 flexWrap="wrap"
             >
                 <ImageAvatars />
-                <Stack flexWrap={true} alignItems="cemter" color={'logo.main'}>
-                    <Stack spacing={2} p={1} sx={{ marginTop: "20px" }}>
-                        <Typography variant='h3' mb="10">{item.item.name}</Typography>
-                        <Typography variant='h4'>Cuidador de {item.item.cuida}</Typography>
-                        <StaticRating rating={item.item.reviews} />
+                <Stack alignItems="center" color={'logo.main'}>
+                    <Stack spacing={2} p={1} sx={{ marginTop: "20px" }} >
+                        <Typography variant='h4' fontSize="40px" mb="10"alignSelf="center">{item.item.name}</Typography>
+                        <Typography variant='h5'alignSelf="center"> {item.item.cuida}</Typography>
+                        <StaticRating alignSelf="center"  sx={{marginLeft:"20px"}} rating={item.item.reviews} />
                         <Button className="CheckButton" onClick={handleContact}>
                             Contacta
                         </Button>
                     </Stack>
-
                 </Stack>
             </Stack>
         )
@@ -225,13 +212,9 @@ export default function ServicesAndCarousel() {
         <Fragment>
             <Stack>
                 <TextClaim />
-
                 <ServicesForm state={service} setState={setService} />
-
             </Stack>
-            <CarouselCaretakers state={service} />
-
-
+            <CarouselCaretakers state={service} />  
         </Fragment>
     )
 

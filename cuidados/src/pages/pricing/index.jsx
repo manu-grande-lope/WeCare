@@ -1,19 +1,56 @@
 import { Box, Typography } from "@mui/material"
+import ChildrenPng from '../assets/children.png';
+import ancianos from '../assets/ancianos.png';
+import cigüeña from '../assets/cigueña.png';
+import corgi from '../assets/corgi.png';
+import money from '../assets/money.jpg';
+import { 
+    Grid, 
+    Card, 
+    CardContent, 
+    CardMedia 
+} from "@mui/material";
+import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
+
+const styles = {
+    paperContainer: {
+        backgroundImage: `url(${money})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        height: '90vh',
+
+    }
+};
+
+
 
 export default function Pricing(){
-
+    const [i] = useTranslation("global");
 
     return(
-        <Box>
-            <Typography>
-                En WECARE los precios los ponen los cuidadores, ellos valoran sus servicios y controlan las transacciones, nosotros sólo os ponemos en contacto
-                y nos aseguramos de que las dos partes cumplan.
-                ¿Cómo lo hacemos?
-                Somos una organización sin ánimo de lucro, sólo nos preocupamos por conectar a personas con una necesidad con aquellas que proveen un servicio.
-                El rango de precio siempre es razonable y lo único que controlamos es que haya un mínimo y un máximo por hora. 
-                No podrán cobrarte más de 40€/h y no habrá servicios por debajo de los 15€/h, con esto nos aseguramos que los servicios son de calidad, pero no abusivos.
-            </Typography>
-
-        </Box>
+        <Grid item container xs={12} justifyContent="center"  style={styles.paperContainer}>
+        <Grid item container xs={12} lg={6}  mt={20} ml={10} mr={10} mb={20} height="40vh">
+        <Card>
+                <CardContent>
+                <img src="http://localhost:3001/public/images/money.png"/>
+                    <Typography gutterBottom variant="h5" component="div">
+                    {i("pricing.titlePricing")}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                    {i("pricing.pricingText")}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                    {i("pricing.pricingText2")}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                    {i("pricing.pricingText3")}
+                    </Typography>
+                </CardContent>
+        </Card>    
+        </Grid>
+        </Grid>
     )
 }

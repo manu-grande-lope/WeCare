@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import { BrowserRouter, Switch, Route,} from 'react-router-dom';
 import { Grid, Stack} from '@mui/material';
 import './App.css';
@@ -26,7 +26,7 @@ function App() {
     <ThemeProvider>
     <BrowserRouter>
     <Stack sx={{minHeight:"100vh"}}>
-    <Grid xs={12} container justifyContent="center"  sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
+    <Grid  container justifyContent="center"  sx={{ backgroundSize: "100%", maxHeight: "300px"}}>
           <Header />
           </Grid>
           <main className='main__style'>

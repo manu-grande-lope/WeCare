@@ -1,4 +1,11 @@
-import { Grid, Stack, Typography, Card, CardActionArea, CardContent, CardMedia } from "@mui/material";
+import { 
+    Grid, 
+    Typography, 
+    Card, 
+    CardContent, 
+    CardMedia 
+} from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Dogs from '../../pages/assets/dogs-medium.jpg'; // Import using relative path
 import Elder from '../../pages/assets/elder2.jpg';
 import Children from '../../pages/assets/children.jpg';
@@ -6,6 +13,7 @@ import { Fragment } from "react";
 
 
 export default function Banner() {
+    const [i] = useTranslation("global");
     return (
         <Fragment>
         <Grid item container xs={12} lg={4}>
@@ -17,10 +25,10 @@ export default function Banner() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        CUIDAMOS A TUS MASCOTAS
+                    {i("banner.titlePets")}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                    En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                    {i("banner.pets")}
                     </Typography>
                 </CardContent>
         </Card>    
@@ -34,10 +42,10 @@ export default function Banner() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        A TUS MAYORES
+                    {i("banner.titleElder")}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                    En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                    {i("banner.elders")}
                     </Typography>
                 </CardContent>
         </Card>    
@@ -52,10 +60,10 @@ export default function Banner() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        O A TUS HIJOS
+                    {i("banner.titleChild")}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                    En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.
+                    {i("banner.elders")}
                     </Typography>
                 </CardContent>
         </Card>    

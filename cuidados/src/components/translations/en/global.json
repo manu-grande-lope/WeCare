@@ -52,5 +52,29 @@
         "titleError": "There´s been a problem",
         "textError":"Please login to send a message"
             
+    },
+    "aboutUs":{
+        "main": "WECARE is a group of people with the mission to unite people with a need, with those who can solve it. Born as a non-profit organization, WECARE does not charge commission neither to its users nor to its caregivers, giving total freedom to them to manage the rates of their services.",
+        "textOne": "Our caregivers are professionals from different fields, from veterinary assistants, to social workers or nursery teachers, so we can ensure a professional and adequate care. " 
+    },
+    "banner":{
+        "titlePets":"WE TAKE CARE OF YOUR PETS",
+        "pets":"At WECARE you will find qualified caregivers prepared for any care, both veterinary and usual for any of your pets.",
+        "titleElder":"YOUR ELDERS",
+        "elders": "Our caregivers are qualified professionals, from assistants, companions or social workers, to speech therapists or simply people to help with everyday tasks.",
+        "titleChild":"O YOUR CHILDREN",
+        "children": "We have caregivers for children of any age, not only babysitters, but also private teachers, speech therapists, animators, learning specialists. Whatever you need, we have it."
+},
+    "pricing":{
+        "titlePricing": "WECARE IS TRANSPARENCY",
+        "pricingText": "In our platform you choose the prices, both user and caregiver decide the rates they are going to pay and charge respectively.",
+        "pricingText2": "We only mediate between our users when there is a problem. Our platform was born with a real collaborative spirit, with the intention of bringing people together, not so much as services.",  
+        "pricingText2": "We only mediate between our users when there is a problem",
+        "pricinrText3": "The only thing we set is a rate limit to ensure a fair remuneration and a quality service. The minimum rate will always be 15€/, with a maximum of 40€/h for professional users."
+    },
+    "caretakerPublic":{
+        "caregiver":"Caregiver for",
+        "description":"Sobre mi",
+        "Thanks":"Gracias por tu review"
     }
 }

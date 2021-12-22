@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import ServicesAndCarousel from '../../components/carouselEjemplo/index.jsx';
+import ServicesAndCarousel from '../../components/carouselFinal/index.jsx';
 import Banner from '../../components/banner/index.jsx';
 
 

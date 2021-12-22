@@ -1,4 +1,4 @@
-import { Grid, Stack, Box, useRadioGroup } from "@mui/material";
+import { Grid, Stack, Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -64,7 +64,7 @@ function HoverRating(props) {
                 .then(r => r.json())
                 .then(d => setValue(d.average))
         }
-        
+
 
     }
 
@@ -199,16 +199,21 @@ export default function CaretakerPublicProfile() {
                 <ImageAvatars />
             </Grid>
             <Stack direction="column">
-                <Stack direction="column" xs={12} justifyContent="center">
-                    <Typography variant="h7">{userInfo.name} { }</Typography>
-                    <Typography variant="h7">Cuidador de {userInfo.cuida}</Typography>
-                    <Typography variant="h7">{userInfo.description}</Typography>
+                <Stack direction="column" xs={12} >
+                    <Typography variant="h5">{userInfo.name} { }</Typography>
+                    <Typography variant="h7">{i("caretakerPublic.caregiver")} {userInfo.cuida}</Typography>
+                    <Box maxWidth="70vw" mt={3} mb={3}>
+                    <Typography variant="h7">{i("caretakerPublic.description")}</Typography>
+                    <Typography variant="h7" sx={{ marginTop: '20px', marginBottom: '20px' }} >{userInfo.description}</Typography>
+                    </Box>
                 </Stack>
+
                 <HoverRating userInfo={userInfo._id} />
+                <Typography variant="h7">{i("caretakerPublic.Thanks")}</Typography>
                 <Stack component="form" onSubmit={sendMessage}>
-                    <TextField id="outlined-basic" multiline={true} minRows="5" name="description" label="Contacta conmigo" variant="outlined" />
+                    <TextField id="outlined-basic" multiline={true} minRows="5" name="description" label="Contacta conmigo" variant="outlined" sx={{ marginTop: "20px" }} />
                     <Button
-                        sx={{ marginTop: "20px" }}
+                        sx={{ marginTop: "20px", marginBottom:"20px" }}
                         type='submit'
                         variant='contained'
                         size='medium'

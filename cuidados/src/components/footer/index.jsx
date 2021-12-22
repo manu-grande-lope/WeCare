@@ -36,15 +36,12 @@ export default function Footer(props) {
                 </Stack>
                 {/* <button id="theme" className="buttonTheme__style" onClick={handleTheme} ><img alt="theming button" src={ThemePNG} className="buttonTheme__style--img" /></button> */}
             </Stack>
+            <Typography color={'logo.main'} variant="body2"> 2021 © Manuel Lope</Typography>
             <Stack gap={2}>
                 <Link to="/privatepolicy">Politica de privacidad</Link>
                 <Link to="/terms">Terms and conditions</Link>
             </Stack>
-            <Stack ml={-100} gap>
-                <Link to='/services'>{i('menu.services')}</Link>
-                <Link to='/aboutUs'>{i('menu.about-us')}</Link>
-            </Stack>
-            <Typography color={'logo.main'} variant="body2"> 2021 © Manuel Lope</Typography>
+            
         </Grid>
     )
 }
