@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
 import { Stack, Grid } from '@mui/material';
+import {URL} from '../constantes/globales.js';
 
 export default function Login() {
     let history = useHistory();
@@ -50,7 +51,7 @@ export default function Login() {
                 })
             }
             //llamo al login
-            fetch('http://localhost:3001/auth/login', options)
+            fetch(`${URL}/auth/login`, options)
                 .then(r => {
                     console.log(r);
                     if (r.status === 404) {

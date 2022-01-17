@@ -10,6 +10,7 @@ import { useHistory, useParams } from "react-router-dom";
 import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
+import {URL} from '../../components/constantes/globales.js';
 
 
 
@@ -60,7 +61,7 @@ function HoverRating(props) {
                     userReviewedId: props.userInfo
                 }),
             }
-            fetch('http://localhost:3001/user/reviews', options)
+            fetch(`${URL}/user/reviews`, options)
                 .then(r => r.json())
                 .then(d => setValue(d.average))
         }
@@ -113,7 +114,7 @@ export default function CaretakerPublicProfile() {
                 'content-type': 'application/json'
             },
         }
-        fetch(`http://localhost:3001/user/publicProfile?id=${id}`, options)
+        fetch(`${URL}/user/publicProfile?id=${id}`, options)
             .then(r => r.json())
             .then(d => {
                 setUserInfo(d)
@@ -123,8 +124,8 @@ export default function CaretakerPublicProfile() {
     function ImageAvatars() {
         return (
             <Avatar
-                alt="Remy Sharp"
-                src={`http://localhost:3001/public/images/${userInfo.pic}`}
+                alt="Avatar"
+                src={`${URL}/public/images/${userInfo.pic}`}
                 sx={{ width: 200, height: 200, alignSelf: 'center' }}
 
             />
@@ -146,7 +147,7 @@ export default function CaretakerPublicProfile() {
                     retrieveId: id
                 })
             }
-            fetch('http://localhost:3001/user/sendMessage', options)
+            fetch(`${URL}/user/sendMessage`, options)
                 .then(r => {
                     if (r.status === 200) {
                         setSentCorrectly(true)

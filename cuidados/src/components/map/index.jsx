@@ -6,6 +6,8 @@ import './style.css';
 
 export default function Map() {
 
+// Traigo del landing por props la latitud y la longitud del usuario.
+
 
 
 
