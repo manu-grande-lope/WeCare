@@ -1,0 +1,24 @@
+.divImg__style--button {
+	font: inherit;
+	cursor: pointer;
+    margin-top: 32vh;
+    margin-left: -67px;
+    background: none;
+    border: none;
+
+    
+}
+
+
+.hidden__style {
+    visibility: hidden;
+}
+
+.icon_edit {
+    color: white;
+    background-color: #EE9A9A;
+    padding-top: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

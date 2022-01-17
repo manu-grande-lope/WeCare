@@ -1,0 +1,78 @@
+{
+    "footer": {
+        "Hello-world": "Elije tu idioma"
+    },
+    "claim": {
+        "claim-phrase": "Bienvenido a",
+        "catch-phrase": "Cuidadores para todo tipo de necesidad",
+        "catch-phrase2": "Déjalo en nuestras manos"
+    },
+    "menu": {
+        "services": "Servicios",
+        "pricing": "Precios",
+        "about-us": "Sobre Nosotros"
+    },
+    "select-service": {
+        "choose": "Elige un servicio",
+        "date-start": "Principio",
+        "date-finish": "Final",
+        "to": "a"
+    },
+    "menu-registro": {
+        "name": "Nombre",
+        "description": "Sobre ti",
+        "care": "¿Qué cuidados ofreces?",
+        "user-question": "¿Cuidas o te cuidamos?",
+        "caretaker": "Cuidador",
+        "user": "Usuario",
+        "pets": "Mascotas",
+        "elderly": "Ancianos",
+        "children": "Niños",
+        "send-button": "Enviar"
+    },
+    "menu-settings": {
+        "login": "Login",
+        "register": "Registro",
+        "account": "Mi Cuenta",
+        "logout": "Logout"
+    },
+    "menu-login": {
+        "name": "Nombre de usuario"
+    },
+    "caretaker": {
+        "modify": "Modificar mi cuenta",
+        "messages": "Mis mensajes",
+        "alert": "¡ESCUCHA!",
+        "delete": "BORRAR CUENTA",
+        "text-alert": "En WECARE no compartimos tus datos con terceros, esta información es tuya y solo tuya, no te preocupes por tus transacciones con otros usuarios, nosotros somos sólo mediadores, gracias por confiar en nuestra plataforma."
+    },
+    "modal": {
+        "title": "¡Muchas gracias!",
+        "titleError": "Ha ocurrido un error",
+        "text": "Tu mensaje ha sido enviado.",
+        "textError": "Por favor haz login para enviar un mensaje"
+    },
+    "aboutUs": {
+        "main": "WECARE somos un grupo de personas con la misión de unir gente con una necesidad, con aquellos que pueden solventarla. Nacida como una organización sin ánimo de lucro, WECARE no cobra comisión ni a sus usuarios ni a sus cuidadores, dando total libertad a los mismos para gestionar las tarifas de sus servicios",
+        "textOne": "Nuestros cuidadores son profesionales de distintos ámbitos, desde auxiliares veterinarios, hasta trabajadores sociales o maestros de guardería, con lo que podemos asegurar un cuidado profesional y adecuado. "
+    },
+    "banner": {
+        "titlePets": "CUIDAMOS A TUS MASCOTAS",
+        "pets": "En WECARE encontrarás cuidadores titulados y preparados para cualquier cuidado, tanto veterinario como usual para cualquiera de tus mascotas.",
+        "titleElder": "A TUS MAYORES",
+        "elders": "Nuestros cuidadores son profesionales titulados, desde auxiliares, acompañantes o trabajadores sociales, hasta logopedas o simplemente gente para ayudar en tareas cotidianas.",
+        "titleChild": "O A TUS HIJOS",
+        "children": "Tenemos cuidadores para niños de cualquier edad, no sólo niñer@s, si no profesores particulares, logopedas, animadores, especialistas en aprendizaje... Lo que necesites, lo tenemos."
+    },
+    "pricing": {
+        "titlePricing": "WECARE ES TRANSPARENCIA",
+        "pricingText": "En nuestra plataforma los precios los elegís vosotros, tanto usuario como cuidador deciden las tarifas que van a pagar y cobrar respectivamente.",
+        "pricingText2": "Nosotros sólo mediamos entre nuestros usuarios cuando hay algún problema. Nuestra plataforma nace con espíritu colaborativo real, con la intención de unir personas, no tanto como servicios.",
+        "pricingText3": "Lo único que ponemos son unas tarifas límites para asegurar una retribución justa y un servicio de calidad. La tarifa mínima siempre serán 15€/h, con unas máximas de 40€/h para usuarios profesionales."
+    },
+    "caretakerPublic":{
+        "caregiver":"Cuidador de",
+        "description":"Sobre mi",
+        "Thanks":"Gracias por tu review."
+    }
+}
