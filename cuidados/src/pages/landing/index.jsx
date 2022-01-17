@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import ServicesAndCarousel from '../../components/carouselFinal/index.jsx';
 import Banner from '../../components/banner/index.jsx';
+import Map from '../../components/map/index.jsx'
 
 
 
@@ -16,9 +17,14 @@ function Landing() {
       <Grid item container  xs={12} pl={2}  mt={5} minHeight="50vh"   justifyContent="space-around" flexWrap="wrap" >
       <ServicesAndCarousel/>
         </Grid>
-        <Grid item container xs={12} min>
+        
+        <Grid item container xs={12} >
         <Banner/>
         </Grid>
+        <Grid  item container xs={12} lg={12}>
+        <Map/>
+        </Grid>
+        
     </Grid>
   );
 }
