@@ -16,6 +16,7 @@ import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import TextClaim from '../textClaim/index.jsx';
+import {URL} from '../constantes/globales.js';
 
 
 
@@ -134,7 +135,7 @@ export default function ServicesAndCarousel() {
         const [isLoading, setIsLoading] = useState(true)
 
         useEffect(() => {
-            fetch('http://localhost:3001/user/getallcaretakers')
+            fetch(`${URL}/user/getallcaretakers`)
                 .then(r => r.json())
                 .then(d => {
                     console.log(d, 'esto es d')
@@ -177,7 +178,7 @@ export default function ServicesAndCarousel() {
             return (
                 <Avatar
                     alt="Remy Sharp"
-                    src={`http://localhost:3001/public/images/${item.item.pic}`}
+                    src={`${URL}/public/images/${item.item.pic}`}
                     sx={{ width: 200, height: 200, alignSelf: 'center', marginTop: '20px' }}
 
                 />

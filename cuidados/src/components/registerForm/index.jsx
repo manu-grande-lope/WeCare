@@ -13,6 +13,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import {URL} from '../constantes/globales.js';
 
 
 export default function RegisterForm() {
@@ -84,7 +85,7 @@ export default function RegisterForm() {
                 console.log(event.target.userType.value)
             }
             // llamo al registro
-            fetch("http://localhost:3001/auth/register", options)
+            fetch(`${URL}/auth/register`, options)
                 .then((r) => r.json())
                 .then((d) => {
                     if (d) {

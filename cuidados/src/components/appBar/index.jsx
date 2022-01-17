@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useTranslation } from "react-i18next";
-
+import {URL} from '../constantes/globales.js' 
 
 const pages = ['menu.services', 'menu.pricing', 'menu.about-us'];
 const pathPages = ['/services', '/pricing', '/aboutUs']
@@ -119,7 +119,7 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="http://localhost:3001/public/images/user2.png" />
+                                <Avatar alt="Remy Sharp" src={`${URL}/public/images/user2.png`}/>
                             </IconButton>
                         </Tooltip>
                         <Menu

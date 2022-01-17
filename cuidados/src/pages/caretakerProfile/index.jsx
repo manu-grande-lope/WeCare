@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { useImgPreview } from "../../components/custom_hooks/useImgPrev";
 import './style.css';
-import { padding } from "@mui/system";
+import {URL} from '../../components/constantes/globales.js';
 
 
 
@@ -68,7 +68,7 @@ export default function CaretakerProfile() {
                 'content-type': 'application/json'
             },
         }
-        fetch('http://localhost:3001/user/', options)
+        fetch(`${URL}/user/`, options)
             .then(r => r.json())
             .then(d => setUserInfo(d))
 
@@ -86,7 +86,7 @@ export default function CaretakerProfile() {
                 'content-type': 'application/json'
             },
         }
-        fetch('http://localhost:3001/user/account', options)
+        fetch(`${URL}/user/account`, options)
             .then(r => {
                 console.log('primer then', r.status)
                 if (r.status === 200) {
@@ -112,7 +112,7 @@ export default function CaretakerProfile() {
 
 
         }
-        fetch('http://localhost:3001/user/modifyUser', options)
+        fetch(`${URL}/user/modifyUser`, options)
             .then(r => {
                 console.log(r)
                 window.location.reload()
@@ -155,7 +155,7 @@ export default function CaretakerProfile() {
                         handleImageChange={handleImageChange}
                         urlPreview={urlPreview}
                         refId={refId}
-                        defaultImg={userInfo ? `http://localhost:3001/public/images/${userInfo.pic}` : `http://localhost:3001/public/images/user.png`}
+                        defaultImg={userInfo ? `${URL}/public/images/${userInfo.pic}` : `${URL}/public/images/user.png`}
                         rounded
                     />
                 </Paper>
