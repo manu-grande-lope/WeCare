@@ -4,6 +4,7 @@ import {
     Card, 
     CardContent 
 } from "@mui/material";
+import {URL} from '../constantes/globales.js';
 
 const styles = {
     paperContainer: {
@@ -24,7 +25,7 @@ export default function NotFound(){
         <Grid item container xs={12} lg={12}  m={20} width={20} >
         <Card>
                 <CardContent>
-                <img src="http://localhost:3001/public/images/error.png"/>
+                <img src={`${URL}/public/images/error.png`}/>
                     <Typography gutterBottom fontSize={40}>
                     404 FOUND 
                     </Typography>

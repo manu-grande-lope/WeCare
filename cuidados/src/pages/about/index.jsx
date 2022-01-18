@@ -5,6 +5,7 @@ import {
     Card, 
     CardContent 
 } from "@mui/material";
+import {URL} from '../constantes/globales.js';
 
 const styles = {
     paperContainer: {
@@ -28,7 +29,7 @@ export default function About(){
         <Grid item container xs={12} lg={6}  mt={20} ml={10} mr={10} mb={20} height="40vh">
         <Card>
                 <CardContent>
-                <img src="http://localhost:3001/public/images/aboutus.png"/>
+                <img src={`${URL}/public/images/aboutus.png`}/>
                     <Typography gutterBottom variant="body1" component="div">
                     {i ("aboutUs.main")}
                     </Typography>

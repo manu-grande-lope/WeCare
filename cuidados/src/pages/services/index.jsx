@@ -6,6 +6,7 @@ import {
     CardContent, 
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import {URL} from '../constantes/globales.js'
 
 
 
@@ -20,7 +21,7 @@ export default function Pricing(){
         <Grid item container xs={12} lg={6} alignSelf="center"  >
         <Card>
                 <CardContent>
-                <img src="http://localhost:3001/public/images/corgi.png"/>
+                <img src={`${URL}/public/images/corgi.png`}/>
 
                     <Typography gutterBottom variant="h5" component="div">
                     {i("banner.titlePets")}
@@ -34,7 +35,7 @@ export default function Pricing(){
         <Grid item container  xs={12} lg={6} alignSelf="center">
         <Card>
                 <CardContent>
-                <img src="http://localhost:3001/public/images/ancianos.png"/>
+                <img src={`${URL}/public/images/ancianos.png`}/>
                     <Typography gutterBottom variant="h5" component="div">
                     {i("banner.titleElder")}
                     </Typography>
@@ -48,7 +49,7 @@ export default function Pricing(){
     <Grid item container xs={12} lg={6} alignSelf="center">
     <Card>
                 <CardContent>
-                <img src="http://localhost:3001/public/images/cigueña.png"/>
+                <img src={`${URL}/public/images/cigueña.png`}/>
                     <Typography gutterBottom variant="h5" component="div">
                     {i("banner.titleChild")}
                     </Typography>
