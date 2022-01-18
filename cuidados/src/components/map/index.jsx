@@ -17,7 +17,7 @@ export default function Map() {
                 <Typography variant='h3' mb={4} mt={4} fontWeight={900} p={2} color={'primary.main'}>
                     CUIDADORES CERCA DE TI
                 </Typography>
-                <MapContainer center={[37.385191,-5.9941002]} zoom={130} scrollWheelZoom={true} className='map'>
+                <MapContainer center={[37.385191,-5.9941002]} zoom={1000} scrollWheelZoom={true} className='map'>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
