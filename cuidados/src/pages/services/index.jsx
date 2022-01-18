@@ -6,7 +6,7 @@ import {
     CardContent, 
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import {URL} from '../constantes/globales.js'
+import {URL} from '../../components/constantes/globales.js';
 
 
 

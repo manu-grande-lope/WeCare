@@ -4,7 +4,7 @@ import {
     Card, 
     CardContent 
 } from "@mui/material";
-import {URL} from '../constantes/globales.js';
+import {URL} from '../../components/constantes/globales.js';
 
 const styles = {
     paperContainer: {
