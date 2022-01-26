@@ -16,10 +16,7 @@ import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import TextClaim from '../textClaim/index.jsx';
-import {URL} from '../constantes/globales.js';
-
-
-
+import { URL } from '../constantes/globales.js';
 
 
 export default function ServicesAndCarousel() {
@@ -118,17 +115,6 @@ export default function ServicesAndCarousel() {
         );
     }
 
-
-
-
-
-
-
-
-
-
-
-
     function CarouselCaretakers({ state }) {
         const [caretakers, setCaretakers] = useState([]);
         const [carouselData, setCarouselData] = useState([]);
@@ -138,19 +124,17 @@ export default function ServicesAndCarousel() {
             fetch(`${URL}/user/getallcaretakers`)
                 .then(r => r.json())
                 .then(d => {
-                    console.log(d, 'esto es d')
                     setCarouselData(d)
                     setCaretakers(d)
                     setIsLoading(false)
                 })
-
         }, []);
+
         useEffect(() => {
             if (state !== 'Elige un servicio') {
                 setCarouselData(caretakers.filter((item) => item.cuida === state))
             }
         }, [state, caretakers])
-
 
         return (
             <Grid item xs={10.5} md={7} lg={5} mt={7} mb={7} className='carousel__style--alpha' >
@@ -163,9 +147,9 @@ export default function ServicesAndCarousel() {
                         {carouselData.map((item, i) => <Item key={i} item={item} />)}
                     </Carousel>}
             </Grid>
-
         )
     }
+
     function Item(item) {
         console.log(item)
         const history = useHistory();
@@ -195,9 +179,9 @@ export default function ServicesAndCarousel() {
                 <ImageAvatars />
                 <Stack alignItems="center" color={'logo.main'}>
                     <Stack spacing={2} p={1} sx={{ marginTop: "20px" }} >
-                        <Typography variant='h4' fontSize="40px" mb="10"alignSelf="center">{item.item.name}</Typography>
-                        <Typography variant='h5'alignSelf="center"> {item.item.cuida}</Typography>
-                        <StaticRating alignSelf="center"  sx={{marginLeft:"20px"}} rating={item.item.reviews} />
+                        <Typography variant='h4' fontSize="40px" mb="10" alignSelf="center">{item.item.name}</Typography>
+                        <Typography variant='h5' alignSelf="center"> {item.item.cuida}</Typography>
+                        <StaticRating alignSelf="center" sx={{ marginLeft: "20px" }} rating={item.item.reviews} />
                         <Button className="CheckButton" onClick={handleContact}>
                             Contacta
                         </Button>
@@ -208,14 +192,13 @@ export default function ServicesAndCarousel() {
     }
 
 
-
     return (
         <Fragment>
             <Stack>
                 <TextClaim />
                 <ServicesForm state={service} setState={setService} />
             </Stack>
-            <CarouselCaretakers state={service} />  
+            <CarouselCaretakers state={service} />
         </Fragment>
     )
 

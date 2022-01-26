@@ -100,7 +100,6 @@ export default function RegisterForm() {
 
     const handleUserChange = (event) => {
         setUserType(!userType)
-        console.log("cambia")
 
     }
 

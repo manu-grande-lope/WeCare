@@ -14,7 +14,7 @@ const styles = {
         backgroundPosition: "center center",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
-        height: '90vh',
+        height: '110vh',
 
     }
 };
